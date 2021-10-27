@@ -27,7 +27,7 @@
 <meta property="og:site_name" content="杂烩学习小站">
 <meta property="og:description" content="业精于勤荒于嬉，行成于思毁于随">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="lchen">
+<meta property="article:author" content="无名小辈">
 <meta name="twitter:card" content="summary">
 
 
@@ -122,9 +122,9 @@
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="lchen"
+    <img class="site-author-image" itemprop="image" alt="无名小辈"
       src="/images/avatar.jpg">
-  <p class="site-author-name" itemprop="name">lchen</p>
+  <p class="site-author-name" itemprop="name">无名小辈</p>
   <div class="site-description" itemprop="description">业精于勤荒于嬉，行成于思毁于随</div>
 </div>
 <div class="site-state-wrap site-overview-item animated">
@@ -189,7 +189,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="lchen">
+      <meta itemprop="name" content="无名小辈">
       <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
     </span>
 
@@ -210,7 +210,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-10-27 17:02:49 / 修改时间：18:55:22" itemprop="dateCreated datePublished" datetime="2021-10-27T17:02:49+08:00">2021-10-27</time>
+      <time title="创建时间：2021-10-27 17:02:49 / 修改时间：20:36:59" itemprop="dateCreated datePublished" datetime="2021-10-27T17:02:49+08:00">2021-10-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -236,8 +236,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="Makefile"><a href="#Makefile" class="headerlink" title="Makefile"></a>Makefile</h1><p><strong>下面的Makefile文件可用于通常情况下的项目编译</strong></p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">OBJ_DIR = ./bin/			<span class="comment">#二进制文件目录</span></span><br><span class="line">SRC_DIR = ./src/			<span class="comment">#源文件目录</span></span><br><span class="line">INC_DIR = ./<span class="keyword">include</span>/		<span class="comment">#头文件目录</span></span><br><span class="line">SRC = <span class="variable">$(<span class="built_in">wildcard</span> <span class="variable">$(SRC_DIR)</span>*.c)</span></span><br><span class="line">OBJ = <span class="variable">$(<span class="built_in">patsubst</span> %.c,%.o,<span class="variable">$(SRC)</span>)</span></span><br><span class="line">OBJ_WITHOUT_DIR = <span class="variable">$(<span class="built_in">notdir</span> <span class="variable">$(OBJ)</span>)</span></span><br><span class="line">OBJ_WITH_DIR = <span class="variable">$(<span class="built_in">addprefix</span> <span class="variable">$(OBJ_DIR)</span>,<span class="variable">$(OBJ_WITHOUT_DIR)</span>)</span></span><br><span class="line">CFLAGS:=-D DEBUG -Wall -g -I<span class="variable">$(INC_DIR)</span>	-I[路径]<span class="comment">#编译选项</span></span><br><span class="line">CC:=gcc</span><br><span class="line">EXE = server.exe</span><br><span class="line"></span><br><span class="line"><span class="variable">$(EXE)</span>:<span class="variable">$(OBJ_WITH_DIR)</span></span><br><span class="line">    <span class="variable">$(CC)</span> <span class="variable">$(OBJ_WITH_DIR)</span> -o <span class="variable">$(EXE)</span> -lpthread</span><br><span class="line"><span class="variable">$(OBJ_DIR)</span>%.o:<span class="variable">$(SRC_DIR)</span>%.c</span><br><span class="line">    <span class="variable">$(CC)</span> -c <span class="variable">$&lt;</span> -o <span class="variable">$@</span> <span class="variable">$(CFLAGS)</span></span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">    rm -rf <span class="variable">$(OBJ_DIR)</span>*.o <span class="variable">$(EXE)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+          <h1 id="Makefile"><a href="#Makefile" class="headerlink" title="Makefile"></a>Makefile</h1><p>记录一个简单的Makefile样例</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/10/27/Makefile/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -267,7 +274,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="lchen">
+      <meta itemprop="name" content="无名小辈">
       <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
     </span>
 
@@ -288,7 +295,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-10-27 17:01:54 / 修改时间：19:07:14" itemprop="dateCreated datePublished" datetime="2021-10-27T17:01:54+08:00">2021-10-27</time>
+      <time title="创建时间：2021-10-27 17:01:54 / 修改时间：20:42:09" itemprop="dateCreated datePublished" datetime="2021-10-27T17:01:54+08:00">2021-10-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -314,125 +321,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="MarkDown-example"><a href="#MarkDown-example" class="headerlink" title="MarkDown example"></a>MarkDown example</h1><p> <strong>整理各种MarkDown语法实例，便于查询</strong><br> <strong>各实例都以代码块显示出来，可删除代码块符号显示语法效果</strong></p>
-<ul>
-<li>纯文本，兼容性极强，可以用所有文本编辑器打开。</li>
-<li>格式转换方便，Markdown的文本可以轻松转换为HTML、PDF、WORD、电子书等。</li>
-<li>Markdown的标记语法有极好的可读性。</li>
-</ul>
-<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>列表格式：在文字前面加上 <code>-</code> 就可以以列表格式显示</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 文本1</span><br><span class="line">- 文本2</span><br></pre></td></tr></table></figure>
-<ul>
-<li>文本1</li>
-<li>文本2</li>
-</ul>
-<p>有序列表格式：通过在文字之前加 <code>1.</code> <code>2.</code> <code>3.</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 文本1</span><br><span class="line">2. 文本2</span><br></pre></td></tr></table></figure>
-<ol>
-<li>文本1</li>
-<li>文本2</li>
-</ol>
-<h2 id="文本链接"><a href="#文本链接" class="headerlink" title="文本链接"></a>文本链接</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[百度一下](www.baidu.com)下面为显示效果，点击可跳转到百度</span><br></pre></td></tr></table></figure>
-<p>示例：<a href="www.baidu.com">百度一下</a></p>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 欢迎关注Markdown语法实例</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>欢迎关注Markdown语法实例</p>
-</blockquote>
-<h2 id="粗体和斜体"><a href="#粗体和斜体" class="headerlink" title="粗体和斜体"></a>粗体和斜体</h2><p>用两个<code>*</code>包含一段文本就是粗体的语法，用一个<code>*</code>包含一段文本就是斜体的语法。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*Hello World*</span><br><span class="line">**Hello World**</span><br></pre></td></tr></table></figure>
-<p>显示效果：<br><em>Hello World</em><br><strong>Hello World</strong></p>
-<h2 id="待办清单To-do-List"><a href="#待办清单To-do-List" class="headerlink" title="待办清单To-do List"></a>待办清单To-do List</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- [x] 已完成项目1</span><br><span class="line">	- [x] 已完成事项</span><br><span class="line">	- [ ] 待办事项</span><br><span class="line">- [] 待办项目2</span><br></pre></td></tr></table></figure>
-<p>显示效果</p>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> 已完成项目1<ul>
-<li><input checked="" disabled="" type="checkbox"> 已完成事项</li>
-<li><input disabled="" type="checkbox"> 待办事项</li>
-</ul>
-</li>
-<li><input disabled="" type="checkbox"> 待办项目2</li>
-</ul>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>使用<code>|</code>来分隔不同的单元格，使用<code>-</code>来分隔表头和其他行。<br>在表头下方的分隔线标记中加入<code>|</code>，即可标记下方单元格内容的对齐方式：</p>
-<ul>
-<li><code>:---</code>代表左对齐</li>
-<li><code>:--:</code>代表居中对齐</li>
-<li><code>---:</code>代表右对齐<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|Number|Production|Price|</span><br><span class="line">|------|:--------:|----:|</span><br><span class="line">|1     |note book |5.3  |</span><br><span class="line">|2     |bottle    |3.2  |</span><br></pre></td></tr></table></figure>
-显示效果(只要匹配正确，并不需要完全对齐)：<table>
-<thead>
-<tr>
-<th>Number</th>
-<th align="center">Production</th>
-<th align="right">Price</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td align="center">note book</td>
-<td align="right">5.3</td>
-</tr>
-<tr>
-<td>2</td>
-<td align="center">bottle</td>
-<td align="right">3.2</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-<h1 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h1><blockquote>
-<p><strong>markdown</strong>中的公式编辑教程</p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/25f0139637b7">markdown 数学公式</a></p>
-</blockquote>
-<h1 id="流程图mermaid"><a href="#流程图mermaid" class="headerlink" title="流程图mermaid"></a>流程图mermaid</h1><h2 id="流程图方向"><a href="#流程图方向" class="headerlink" title="流程图方向"></a>流程图方向</h2><ul>
-<li>TB从上到下(top-below)</li>
-<li>BT从下到上(below-top)</li>
-<li>RL从右到左(right-left)</li>
-<li>LR从左到右(left-right)</li>
-<li>TD同TB<h2 id="基本图形"><a href="#基本图形" class="headerlink" title="基本图形"></a>基本图形</h2></li>
-<li>id + [文字描述]矩形</li>
-<li>id + (文字描述)圆角矩形</li>
-<li>id + &gt;文字描述]不对称的矩形</li>
-<li>id + {文字描述}菱形</li>
-<li>id + ((文字描述))圆形<h2 id="节点之间的连接"><a href="#节点之间的连接" class="headerlink" title="节点之间的连接"></a>节点之间的连接</h2></li>
-<li>A –&gt; B A带箭头指向B</li>
-<li>A — B A不带箭头指向B</li>
-<li>A -.- B A用虚线指向B</li>
-<li>A -.-&gt;B A用带箭头的虚线指向B</li>
-<li>A ==&gt; B A用加粗的箭头指向B</li>
-<li>A – 描述 — B A不带箭头指向B并在中间加上文字描述</li>
-<li>A – 描述 –&gt; B A带箭头指向B并在中间加上文字描述</li>
-<li>A -. 描述  .-&gt; B A用带箭头的虚线指向B并在中间加上文字描述</li>
-<li>A == 描述 ==&gt; B A用加粗的箭头指向B并在中间加上文字描述<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">	A[Christmas] -.-&gt; B(Go shopping)</span><br><span class="line">	A --描述--&gt; A</span><br><span class="line">	B --描述--&gt; C&#123;Let me think&#125;</span><br><span class="line">	C ==&gt; |One| D[Laptop]</span><br><span class="line">	C --- |Two| E[iPhone]</span><br><span class="line">	C --&gt; |Three| F[Car]</span><br></pre></td></tr></table></figure>
-<h2 id="子流程图"><a href="#子流程图" class="headerlink" title="子流程图"></a>子流程图</h2><h3 id="示例代码-1"><a href="#示例代码-1" class="headerlink" title="示例代码"></a>示例代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">	c1--&gt;a2</span><br><span class="line">	subgraph one</span><br><span class="line">	a1--&gt;a2</span><br><span class="line">	end</span><br><span class="line">	subgraph two</span><br><span class="line">	b1-.-&gt;b2</span><br><span class="line">	end</span><br><span class="line">	subgraph three</span><br><span class="line">	c1==&gt;c2</span><br><span class="line">	end</span><br></pre></td></tr></table></figure>
-<h1 id="时序图"><a href="#时序图" class="headerlink" title="时序图"></a>时序图</h1><h2 id="1-什么是时序图"><a href="#1-什么是时序图" class="headerlink" title="1 什么是时序图"></a>1 什么是时序图</h2>序列图（Sequence Diagram），又名时序图、循序图、顺序图，是一种UML交互图。它通过描述对象之间发送消息的时间顺序显示多个对象之间的动态协作。它可以表示用例的行为顺序，当执行一个用例行为时，其中的每条消息对应一个类操作或状态机中引起转换的触发事件。<br>通俗的讲就是描述不同时间下各对象之间的消息或动作。</li>
-</ul>
-<h2 id="2-时序图基础"><a href="#2-时序图基础" class="headerlink" title="2 时序图基础"></a>2 时序图基础</h2><p>常规的时序图由以下几个部分组成：<br><strong>角色</strong><br>系统角色，可以是人、其他的系统或者子系统；<br>比如说，市民是一个角色，终端系统是一个角色<br><strong>对象</strong><br>对象是某一类实例，比方说张三，POS机；<br>对象包括三种命名方式：</p>
-<ul>
-<li>包括对象名和类名；</li>
-<li>只显示类名不显示对象名，即表示他是一个匿名对象；</li>
-<li>只显示对象名不显示类名。</li>
-</ul>
-<p><strong>生命线</strong><br>一个对象的生命线就表示该对象的存活时间，是一条垂直的虚线，消息在虚线之间传递。<br><strong>控制焦点</strong><br>在生命线中的某一个点，对象的动作，也就是某一时刻对象做了什么。<br><strong>消息</strong><br>不同时间点上不同对象之间的消息交互。</p>
-<h3 id="2-1-标题（title）"><a href="#2-1-标题（title）" class="headerlink" title="2.1 标题（title）"></a>2.1 标题（title）</h3><p>表示时序图的标题，语法如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">title:我是标题</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="2-2-参与者（participant）"><a href="#2-2-参与者（participant）" class="headerlink" title="2.2 参与者（participant）"></a>2.2 参与者（participant）</h3><p>参与者，也就相当于一个对象实例，用下面语法定义：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">participant 对象A</span><br><span class="line">participant 对象B</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-3-消息（Note）"><a href="#2-3-消息（Note）" class="headerlink" title="2.3 消息（Note）"></a>2.3 消息（Note）</h3><p>消息表示参与者在某时刻的动作，有三个位置可选择，左，中，右，语法如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">participant 对象A</span><br><span class="line">Note left of 对象A: 我是左边</span><br><span class="line">Note over 对象A: 我是中间</span><br><span class="line">Note right of 对象A: 我是右边</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-4-动作（actor）"><a href="#2-4-动作（actor）" class="headerlink" title="2.4 动作（actor）"></a>2.4 动作（actor）</h3><p>动作代表两个对象之间的交互，有两种线：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">对象A-&gt;对象B:How are you?</span><br><span class="line">对象B--&gt;对象A:Fine,and you?</span><br><span class="line">对象A-&gt;&gt;对象B:Fine,byebye.</span><br><span class="line">对象B--&gt;&gt;对象A:byebye.</span><br></pre></td></tr></table></figure>
-<h2 id="3-时序图实例"><a href="#3-时序图实例" class="headerlink" title="3 时序图实例"></a>3 时序图实例</h2><h3 id="3-1-示例1"><a href="#3-1-示例1" class="headerlink" title="3.1 示例1"></a>3.1 示例1</h3><p>在画图的时间，有时候不用提前定义参与者，不过提前定义显得清晰。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">title:Alice and Bob</span><br><span class="line">participant Alice</span><br><span class="line">participant Bob</span><br><span class="line">Alice-&gt;Bob:Hello Bob, how are you?</span><br><span class="line">Note over Bob:Bob thinks</span><br><span class="line">Bob--&gt;Alice:I am good, thanks!</span><br></pre></td></tr></table></figure>
-<h3 id="3-2-示例2"><a href="#3-2-示例2" class="headerlink" title="3.2 示例2"></a>3.2 示例2</h3><p>示例效果如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">title:Here is a title</span><br><span class="line">A-&gt;B:Normal line</span><br><span class="line">B--&gt;C:Dashed line</span><br><span class="line">C-&gt;&gt;D:Open arrow</span><br><span class="line">D--&gt;&gt;A:Dashed open arrow</span><br><span class="line">Note left of A:Note to the\n left of A</span><br><span class="line">Note right of A:Note to the\n right of A</span><br><span class="line">Note over A:Note over A</span><br><span class="line">Note over C,D:Note over both C and D</span><br></pre></td></tr></table></figure>
-<h3 id="3-3-client-server示例1"><a href="#3-3-client-server示例1" class="headerlink" title="3.3 client-server示例1"></a>3.3 client-server示例1</h3><p>示例效果如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">participant 客户端</span><br><span class="line">participant 服务器</span><br><span class="line">participant 通行证中心</span><br><span class="line">Note over 客户端:用户输入通行证的账号、密码</span><br><span class="line">客户端-&gt;通行证中心:发送账号、密码</span><br><span class="line">Note over 通行证中心:验证账号、密码</span><br><span class="line">通行证中心--&gt;&gt;客户端:返回token</span><br><span class="line">客户端-&gt;服务器:发送token</span><br><span class="line">服务器-&gt;通行证中心:验证token</span><br><span class="line">通行证中心--&gt;&gt;服务器:验证成功</span><br><span class="line">服务器--&gt;&gt;客户端:登录成功</span><br></pre></td></tr></table></figure>
-<h3 id="3-4-client-server示例2"><a href="#3-4-client-server示例2" class="headerlink" title="3.4 client-server示例2"></a>3.4 client-server示例2</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">participant 客户端</span><br><span class="line">participant 控制器</span><br><span class="line">participant 业务</span><br><span class="line">participant 数据库</span><br><span class="line"></span><br><span class="line">客户端-&gt;控制器:提交数据</span><br><span class="line">Note right of 客户端:提交数据javascript进行验证</span><br><span class="line">控制器-&gt;控制器:验证数据完整性</span><br><span class="line">Note left of 控制器:返回错误的字段信息</span><br><span class="line">控制器--&gt;客户端:数据不完整</span><br><span class="line">控制器-&gt;业务:保存店铺到数据库</span><br><span class="line">业务-&gt;业务:save店铺数据</span><br><span class="line">业务--&gt;控制器:保存出现异常</span><br><span class="line">控制器--&gt;客户端:save异常，提示客户端</span><br><span class="line">业务-&gt;数据库:保存成功</span><br><span class="line">数据库--&gt;业务:success</span><br><span class="line">业务--&gt;控制器:success</span><br><span class="line">控制器--&gt;客户端:success客户端</span><br><span class="line">Note right of 客户端:返回正确的提示，并跳转到审核第二步</span><br></pre></td></tr></table></figure>
-<h1 id="甘特图"><a href="#甘特图" class="headerlink" title="甘特图"></a>甘特图</h1><p>甘特图通过活动列表和时间刻度表示出特定项目的顺序与持续时间。甘特图中横轴表示时间，纵轴表示项目，条表表示期间计划和实际完成情况。直观表明计划何时进行，进展与要求的对比。便于管理者弄清项目的剩余任务，评估工作进度。</p>
-
+          <h1 id="MarkDown-example"><a href="#MarkDown-example" class="headerlink" title="MarkDown example"></a>MarkDown example</h1><p>整理记录的各种MarkDown语法实例，便于查询</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/10/27/MarkDown%E8%AF%AD%E6%B3%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -462,7 +359,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="lchen">
+      <meta itemprop="name" content="无名小辈">
       <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
     </span>
 
@@ -483,7 +380,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-10-27 16:57:36 / 修改时间：19:07:16" itemprop="dateCreated datePublished" datetime="2021-10-27T16:57:36+08:00">2021-10-27</time>
+      <time title="创建时间：2021-10-27 16:57:36 / 修改时间：20:39:35" itemprop="dateCreated datePublished" datetime="2021-10-27T16:57:36+08:00">2021-10-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -509,20 +406,19 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="单例模式singleton"><a href="#单例模式singleton" class="headerlink" title="单例模式singleton"></a>单例模式singleton</h2><p>**要求:**定义一个类，只能由该类创建唯一的一个对象</p>
+          <h2 id="单例模式singleton"><a href="#单例模式singleton" class="headerlink" title="单例模式singleton"></a>单例模式singleton</h2><p><strong>要求：</strong>定义一个类，只能由该类创建唯一的一个对象</p>
 <ol>
 <li>该对象不能是栈/全局对象</li>
 <li>只能将该对象放在堆上</li>
 </ol>
-<p><strong>应用场景:</strong></p>
-<ol>
-<li>可以用单例模式替换掉全局变量（减少全局变量便于管理）</li>
-<li>读取配置文件中的信息</li>
-<li>词典库，网页库</li>
-<li>操作系统的文件系统</li>
-<li>线程池一般也是单例模式</li>
-</ol>
-<h3 id="例1："><a href="#例1：" class="headerlink" title="例1："></a>例1：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//该版本缺陷：</span></span><br><span class="line"><span class="comment">//		- 属于饿汉式写法，不是线程安全的</span></span><br><span class="line"><span class="comment">//		- 在忘记调用的destroy的情况下会造成内存泄漏，虽不对程序</span></span><br><span class="line"><span class="comment">//		  造成影响，但会在测量程序的内存泄漏情况时造成影响</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> std::cout;</span><br><span class="line"><span class="keyword">using</span> std::endl;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">static</span> Singleton *<span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="literal">nullptr</span> == _pInstance)&#123;</span><br><span class="line">            _pInstance = <span class="keyword">new</span> <span class="built_in">Singleton</span>();</span><br><span class="line">        &#125;   </span><br><span class="line">        <span class="keyword">return</span> _pInstance;</span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(_pInstance)&#123;</span><br><span class="line">            <span class="keyword">delete</span> _pInstance;</span><br><span class="line">        &#125;   </span><br><span class="line">    &#125;   </span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">Singleton</span>()&#123;    cout &lt;&lt; <span class="string">&quot;Singleton()&quot;</span> &lt;&lt; endl;  &#125;</span><br><span class="line">    ~<span class="built_in">Singleton</span>()&#123;   cout &lt;&lt; <span class="string">&quot;~Singleton()&quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">static</span> Singleton *_pInstance;</span><br><span class="line">&#125;;</span><br><span class="line">Singleton *Singleton::_pInstance = <span class="literal">nullptr</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//Singleton s1;非法</span></span><br><span class="line">    Singleton *p1 = Singleton::<span class="built_in">getInstance</span>();</span><br><span class="line">    Singleton *p2 = Singleton::<span class="built_in">getInstance</span>();</span><br><span class="line">    Singleton *p3 = Singleton::<span class="built_in">getInstance</span>();</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;p1 = &quot;</span> &lt;&lt; p1 &lt;&lt; endl</span><br><span class="line">         &lt;&lt; <span class="string">&quot;p2 = &quot;</span> &lt;&lt; p2 &lt;&lt; endl</span><br><span class="line">         &lt;&lt; <span class="string">&quot;p3 = &quot;</span> &lt;&lt; p3 &lt;&lt; endl;</span><br><span class="line">    <span class="comment">//delete p1;非法</span></span><br><span class="line">    Singleton::<span class="built_in">destroy</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/10/27/singleton/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -554,7 +450,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">lchen</span>
+  <span class="author" itemprop="copyrightHolder">无名小辈</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>

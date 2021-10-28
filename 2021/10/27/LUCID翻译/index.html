@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"crazy-lc.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"dimmer":false},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="LUCID: 一个实用轻量级的基于深度学习的DDoS攻击检测解决方案摘要：分布式拒绝服务攻击是今天网络中最具有破坏力的威胁之一，它扰乱了必要服务的可用性。DDoS检测的挑战是分析混合的攻击方法，这些攻击方法都可产生实时的攻击流量。在本文中，我们提出了一种实用的、轻量级的深度学习DDoS检测系统——LUCID，它可以利用CNN的性能分析流量并分类为恶意的或良性的。我们有四个主要贡献；(1)一种CNN">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LUCID翻译">
+<meta property="og:url" content="https://crazy-lc.github.io/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/index.html">
+<meta property="og:site_name" content="杂烩学习小站">
+<meta property="og:description" content="LUCID: 一个实用轻量级的基于深度学习的DDoS攻击检测解决方案摘要：分布式拒绝服务攻击是今天网络中最具有破坏力的威胁之一，它扰乱了必要服务的可用性。DDoS检测的挑战是分析混合的攻击方法，这些攻击方法都可产生实时的攻击流量。在本文中，我们提出了一种实用的、轻量级的深度学习DDoS检测系统——LUCID，它可以利用CNN的性能分析流量并分类为恶意的或良性的。我们有四个主要贡献；(1)一种CNN">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://crazy-lc.github.io/.io//10/27/LUCID%E7%BF%BB%E8%AF%91/v2-11c5a4575af7f76346a3b1c27f139dcb_r-1635409760878.jpg">
+<meta property="article:published_time" content="2021-10-27T09:02:49.000Z">
+<meta property="article:modified_time" content="2021-10-28T08:57:53.700Z">
+<meta property="article:author" content="无名小辈">
+<meta property="article:tag" content="翻译">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://crazy-lc.github.io/.io//10/27/LUCID%E7%BF%BB%E8%AF%91/v2-11c5a4575af7f76346a3b1c27f139dcb_r-1635409760878.jpg">
+
+
+<link rel="canonical" href="https://crazy-lc.github.io/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://crazy-lc.github.io/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/","path":"2021/10/27/LUCID翻译/","title":"LUCID翻译"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>LUCID翻译 | 杂烩学习小站</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">杂烩学习小站</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-读书计划"><a href="/books/" rel="section"><i class="fas fa-book-reader fa-fw"></i>读书计划</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-关于"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LUCID-%E4%B8%80%E4%B8%AA%E5%AE%9E%E7%94%A8%E8%BD%BB%E9%87%8F%E7%BA%A7%E7%9A%84%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84DDoS%E6%94%BB%E5%87%BB%E6%A3%80%E6%B5%8B%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">1.</span> <span class="nav-text">LUCID: 一个实用轻量级的基于深度学习的DDoS攻击检测解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Introduction"><span class="nav-number">1.1.</span> <span class="nav-text">1. Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Related-Work"><span class="nav-number">1.2.</span> <span class="nav-text">2. Related Work</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="无名小辈"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">无名小辈</p>
+  <div class="site-description" itemprop="description">业精于勤荒于嬉，行成于思毁于随</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/crazy-lc" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;crazy-lc" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://crazy-lc.github.io/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="无名小辈">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杂烩学习小站">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LUCID翻译
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-10-27 17:02:49" itemprop="dateCreated datePublished" datetime="2021-10-27T17:02:49+08:00">2021-10-27</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-10-28 16:57:53" itemprop="dateModified" datetime="2021-10-28T16:57:53+08:00">2021-10-28</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/" itemprop="url" rel="index"><span itemprop="name">计算机相关</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/%E8%AE%BA%E6%96%87/" itemprop="url" rel="index"><span itemprop="name">论文</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="LUCID-一个实用轻量级的基于深度学习的DDoS攻击检测解决方案"><a href="#LUCID-一个实用轻量级的基于深度学习的DDoS攻击检测解决方案" class="headerlink" title="LUCID: 一个实用轻量级的基于深度学习的DDoS攻击检测解决方案"></a>LUCID: 一个实用轻量级的基于深度学习的DDoS攻击检测解决方案</h1><p>摘要：分布式拒绝服务攻击是今天网络中最具有破坏力的威胁之一，它扰乱了必要服务的可用性。DDoS检测的挑战是分析混合的攻击方法，这些攻击方法都可产生实时的攻击流量。在本文中，我们提出了一种实用的、轻量级的深度学习DDoS检测系统——LUCID，它可以利用CNN的性能分析流量并分类为恶意的或良性的。我们有四个主要贡献；(1)一种CNN的创新应用用于检测DDoS流量，并具有低的处理开销，（2）一种数据集不可知的预处理机制，用于产生在线攻击检测的流量观测，（3）一种激活分析用于解释LUCID的DDoS分类，和（4）在资源受限的硬件平台上对解决方案进行了经验验证。使用最新的数据集，LUCID与现有最先进的检测精度相匹配，同时与最先进的相比，处理时间减少了40倍。评估结果表明，该方法适用于资源受限操作环境下的DDoS检测。</p>
+<p>关键词：分布式拒绝服务攻击， 深度学习， CNN， 边缘计算</p>
+<span id="more"></span>
+
+<h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h2><p>DDoS攻击是当今网络中最有害的威胁之一，它破坏了生产系统和日常生活中基本服务的可用性。尽管自1980年开DDoS攻击就已经被网络研究结构所知，但我们的网络防御在对抗这些攻击时仍被证明是不充分的。</p>
+<p>2016年底，针对域名服务器（DNS）提供商Dyn的攻击，令人担忧的证明了有目标性的DDoS攻击可能造成的破坏【1】。这种特殊的攻击利用了不安全的物联网设备组成的僵尸网络（Mirai），影响了60多种服务。这是当时最大的DDoS攻击流量记录，达到了每秒600Gb。2018年2月针对GitHub的大规模DDoS攻击超出了这个数字【2】。在高峰期，受害者看到的流量为每秒1.3Tbp。攻击者利用了出现中memcached（一种分布式数据库缓存系统）中的漏洞。在此例中，使用伪造的源IP地址（即被攻击的IP地址）进行放大攻击。如果在全球范围内实施，BCP38”网络入口过滤“【3】可以通过阻止带有欺骗IP地址的数据包通过网络来减轻这种攻击。然而，这两个例子说明了DDoS成果的关键在于规模，而不是复杂性。</p>
+<p>近年来，由于攻击方法的多种组合导致DDoS攻击的检测变的更加困难。例如，常见的攻击是攻击者使用多种协议组合的多向量DDoS攻击。为了对抗多样化的攻击技术，需要更细致和更鲁棒的防御技术。基于签名的传统入侵检测系统不能对新的攻击做出方应，现有基于统计异常的检测系统受到定义检测阈值的要求的约束。使用机器学习技术的网络入侵检测系统（NIDSs）正在探索，以解决现有解决方案的局限性。在这方面，深度学习（DL）系统已经被证明在区分DDoS流量和良性流量方面非常有效，它从数据包的低级别、颗粒特征种提取出流量的高级特征表示。然而，现有科学文献中描述的许多基于深度学习的方法从训练角度来看过于资源密集，缺乏在现实世界部署的实用性。具体来说，当前的解决方案不是为在线攻击检测而设计的，在实时网络中约束下，检测算法必须可以处理能跨越多个捕获时间窗口的流量。</p>
+<p>虽然大型CNN架构已被证明可以提供最先进的检测率，但在很少有人关注有限的资源环境中最小化它们的大小并保持良好的性能。正如Dyn攻击和Mirai僵尸网络所观察到的，随着我们在网络上部署更多的物联网设备，从不安全的物联网设备发起DDoS攻击的机会正在增加。这就需要考虑防御机制的部署。Mirai和Memcached等攻击的缓解措施包括使用能够吸收大量DDoS攻击的高性能设备。这些设备位于本地企业或云中。随着为了改善服务供应而出现的边缘计算的发展，考虑保护更靠近边缘的攻击和资源有限的设备的能力变得相当重要。事实上，即使没有资源限制，为了获得最大化系统输出而最小化资源使用也是很有价值的。</p>
+<p>本文结合先进的DDoS检测需要和资源受限设备的部署能力，做出以下贡献：</p>
+<ul>
+<li><p>一种基于深度学习的检测架构，它适用于资源受限的在线环境，其利用了CNN来学习DDos和良性流量的行为，并具有低的处理开销和低的攻击检测时间。我们称该模型为LUCID（Lightweight, Usable CNN in DDoS Detection）。</p>
+</li>
+<li><p>一种与数据集无关的预处理机制，产生与现有在线系统中收集的数据一致的流量观测数据，其中检测算法必须处理在预定义的时间窗口内收集的流量片段。</p>
+</li>
+<li><p>使用核激活分析，解释LUCID在进行DDoS分类时所重视的特性。</p>
+</li>
+<li><p>LUCID在资源受限的硬件平台上的经验验证，以证明该方法在边缘计算场景中的适用性，该场景中设备具有有限的计算能力。</p>
+</li>
+</ul>
+<p>本文的其余部分结构如下：<strong>Sec2</strong> 回顾和讨论相关的工作。<strong>Sec3</strong> 详细说明关于网络流量处理的方法和LUCID CNN模型的架构。<strong>Sec4</strong> 描述了实验设置，详细介绍了数据集和LUCID的开发以及超参数调优过程。<strong>Sec5</strong> 评估LUCID并与最先进的方法进行比较。<strong>Sec6</strong> 介绍了我们的核激活分析，用于解释LUCID的分类过程。<strong>Sec7</strong> 展示边缘DDoS检测的实验和结果。最后，<strong>Sec8</strong> 给出结论。</p>
+<h2 id="2-Related-Work"><a href="#2-Related-Work" class="headerlink" title="2. Related Work"></a>2. Related Work</h2><p>自1999年第一次报道DDoS攻击事件起，网络研究机构就已经在探索DDoS检测和缓解技术。在本章中，</p>
+<p><img src="/.io//10/27/LUCID%E7%BF%BB%E8%AF%91/v2-11c5a4575af7f76346a3b1c27f139dcb_r-1635409760878.jpg"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag"># 翻译</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/10/27/Makefile/" rel="prev" title="Makefile">
+                  <i class="fa fa-chevron-left"></i> Makefile
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">无名小辈</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

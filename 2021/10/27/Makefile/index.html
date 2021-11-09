@@ -27,7 +27,7 @@
 <meta property="og:description" content="Makefile记录一个简单的Makefile样例">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-27T09:02:49.000Z">
-<meta property="article:modified_time" content="2021-10-28T09:07:47.987Z">
+<meta property="article:modified_time" content="2021-11-01T07:53:53.051Z">
 <meta property="article:author" content="无名小辈">
 <meta property="article:tag" content="Makefile">
 <meta name="twitter:card" content="summary">
@@ -220,7 +220,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-28 17:07:47" itemprop="dateModified" datetime="2021-10-28T17:07:47+08:00">2021-10-28</time>
+        <time title="修改时间：2021-11-01 15:53:53" itemprop="dateModified" datetime="2021-11-01T15:53:53+08:00">2021-11-01</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -248,7 +248,6 @@
     <div class="post-body" itemprop="articleBody">
         <h1 id="Makefile"><a href="#Makefile" class="headerlink" title="Makefile"></a>Makefile</h1><p>记录一个简单的Makefile样例</p>
 <span id="more"></span>
-
 <p><strong>下面的Makefile文件可用于通常情况下的项目编译</strong></p>
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">OBJ_DIR = ./bin/			<span class="comment">#二进制文件目录</span></span><br><span class="line">SRC_DIR = ./src/			<span class="comment">#源文件目录</span></span><br><span class="line">INC_DIR = ./<span class="keyword">include</span>/		<span class="comment">#头文件目录</span></span><br><span class="line">SRC = <span class="variable">$(<span class="built_in">wildcard</span> <span class="variable">$(SRC_DIR)</span>*.c)</span></span><br><span class="line">OBJ = <span class="variable">$(<span class="built_in">patsubst</span> %.c,%.o,<span class="variable">$(SRC)</span>)</span></span><br><span class="line">OBJ_WITHOUT_DIR = <span class="variable">$(<span class="built_in">notdir</span> <span class="variable">$(OBJ)</span>)</span></span><br><span class="line">OBJ_WITH_DIR = <span class="variable">$(<span class="built_in">addprefix</span> <span class="variable">$(OBJ_DIR)</span>,<span class="variable">$(OBJ_WITHOUT_DIR)</span>)</span></span><br><span class="line">CFLAGS:=-D DEBUG -Wall -g -I<span class="variable">$(INC_DIR)</span>	-I[路径]<span class="comment">#编译选项</span></span><br><span class="line">CC:=gcc</span><br><span class="line">EXE = server.exe</span><br><span class="line"></span><br><span class="line"><span class="variable">$(EXE)</span>:<span class="variable">$(OBJ_WITH_DIR)</span></span><br><span class="line">    <span class="variable">$(CC)</span> <span class="variable">$(OBJ_WITH_DIR)</span> -o <span class="variable">$(EXE)</span> -lpthread</span><br><span class="line"><span class="variable">$(OBJ_DIR)</span>%.o:<span class="variable">$(SRC_DIR)</span>%.c</span><br><span class="line">    <span class="variable">$(CC)</span> -c <span class="variable">$&lt;</span> -o <span class="variable">$@</span> <span class="variable">$(CFLAGS)</span></span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">    rm -rf <span class="variable">$(OBJ_DIR)</span>*.o <span class="variable">$(EXE)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
     </div>
@@ -266,11 +265,14 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/" rel="prev" title="LUCID翻译">
-                  <i class="fa fa-chevron-left"></i> LUCID翻译
+                <a href="/2021/10/27/MarkDown%E8%AF%AD%E6%B3%95/" rel="prev" title="MarkDown语法">
+                  <i class="fa fa-chevron-left"></i> MarkDown语法
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/" rel="next" title="LUCID翻译">
+                  LUCID翻译 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -316,6 +318,12 @@
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
 
 
 

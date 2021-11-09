@@ -19,18 +19,34 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"crazy-lc.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"dimmer":false},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="LUCID: 一个实用轻量级的基于深度学习的DDoS攻击检测解决方案摘要：分布式拒绝服务攻击是今天网络中最具有破坏力的威胁之一，它扰乱了必要服务的可用性。DDoS检测的挑战是分析混合的攻击方法，这些攻击方法都可产生实时的攻击流量。在本文中，我们提出了一种实用的、轻量级的深度学习DDoS检测系统——LUCID，它可以利用CNN的性能分析流量并分类为恶意的或良性的。我们有四个主要贡献；(1)一种CNN">
+<meta name="description" content="LUCID: 一个实用轻量级的基于深度学习的 $DDoS$ 攻击检测解决方案摘要：分布式拒绝服务攻击是今天网络中最具有破坏力的威胁之一，它扰乱了必要服务的可用性。 $DDoS$ 检测的挑战是分析混合的攻击方法，这些攻击方法都可产生实时的攻击流量。在本文中，我们提出了一种实用的、轻量级的深度学习 $DDoS$ 检测系统——LUCID，它可以利用CNN的特性分析流量并分类为恶意的或良性的。我们有四个主">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LUCID翻译">
 <meta property="og:url" content="https://crazy-lc.github.io/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/index.html">
 <meta property="og:site_name" content="杂烩学习小站">
-<meta property="og:description" content="LUCID: 一个实用轻量级的基于深度学习的DDoS攻击检测解决方案摘要：分布式拒绝服务攻击是今天网络中最具有破坏力的威胁之一，它扰乱了必要服务的可用性。DDoS检测的挑战是分析混合的攻击方法，这些攻击方法都可产生实时的攻击流量。在本文中，我们提出了一种实用的、轻量级的深度学习DDoS检测系统——LUCID，它可以利用CNN的性能分析流量并分类为恶意的或良性的。我们有四个主要贡献；(1)一种CNN">
+<meta property="og:description" content="LUCID: 一个实用轻量级的基于深度学习的 $DDoS$ 攻击检测解决方案摘要：分布式拒绝服务攻击是今天网络中最具有破坏力的威胁之一，它扰乱了必要服务的可用性。 $DDoS$ 检测的挑战是分析混合的攻击方法，这些攻击方法都可产生实时的攻击流量。在本文中，我们提出了一种实用的、轻量级的深度学习 $DDoS$ 检测系统——LUCID，它可以利用CNN的特性分析流量并分类为恶意的或良性的。我们有四个主">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://crazy-lc.github.io/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/table1.PNG">
+<meta property="og:image" content="https://crazy-lc.github.io/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/algorithm1.PNG">
+<meta property="og:image" content="https://crazy-lc.github.io/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/table2.PNG">
+<meta property="og:image" content="https://crazy-lc.github.io/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/fig1.PNG">
+<meta property="og:image" content="https://crazy-lc.github.io/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/fig2.PNG">
+<meta property="og:image" content="https://crazy-lc.github.io/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/table3.PNG">
+<meta property="og:image" content="https://crazy-lc.github.io/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/table4.PNG">
+<meta property="og:image" content="https://crazy-lc.github.io/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/fig3.PNG">
+<meta property="og:image" content="https://crazy-lc.github.io/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/fig4.PNG">
+<meta property="og:image" content="https://crazy-lc.github.io/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/table5.PNG">
+<meta property="og:image" content="https://crazy-lc.github.io/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/table6.PNG">
+<meta property="og:image" content="https://crazy-lc.github.io/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/table7.PNG">
+<meta property="og:image" content="https://crazy-lc.github.io/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/table8.PNG">
+<meta property="og:image" content="https://crazy-lc.github.io/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/table9.PNG">
+<meta property="og:image" content="https://crazy-lc.github.io/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/table10.PNG">
 <meta property="article:published_time" content="2021-10-27T09:02:49.000Z">
-<meta property="article:modified_time" content="2021-10-28T09:08:33.737Z">
+<meta property="article:modified_time" content="2021-11-04T04:19:13.648Z">
 <meta property="article:author" content="无名小辈">
 <meta property="article:tag" content="翻译">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://crazy-lc.github.io/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/table1.PNG">
 
 
 <link rel="canonical" href="https://crazy-lc.github.io/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/">
@@ -119,7 +135,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LUCID-%E4%B8%80%E4%B8%AA%E5%AE%9E%E7%94%A8%E8%BD%BB%E9%87%8F%E7%BA%A7%E7%9A%84%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84DDoS%E6%94%BB%E5%87%BB%E6%A3%80%E6%B5%8B%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">1.</span> <span class="nav-text">LUCID: 一个实用轻量级的基于深度学习的DDoS攻击检测解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Introduction"><span class="nav-number">1.1.</span> <span class="nav-text">1. Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Related-Work"><span class="nav-number">1.2.</span> <span class="nav-text">2. Related Work</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LUCID-%E4%B8%80%E4%B8%AA%E5%AE%9E%E7%94%A8%E8%BD%BB%E9%87%8F%E7%BA%A7%E7%9A%84%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84-DDoS-%E6%94%BB%E5%87%BB%E6%A3%80%E6%B5%8B%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">1.</span> <span class="nav-text">LUCID: 一个实用轻量级的基于深度学习的 $DDoS$ 攻击检测解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-INTRODUCTION"><span class="nav-number">1.1.</span> <span class="nav-text">1. INTRODUCTION</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-RELATED-WORK"><span class="nav-number">1.2.</span> <span class="nav-text">2. RELATED WORK</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Statistical-approaches-to-DDoS-detection"><span class="nav-number">1.2.1.</span> <span class="nav-text">A. Statistical approaches to  $DDoS$  detection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Machine-Learning-for-DDoS-detection"><span class="nav-number">1.2.2.</span> <span class="nav-text">B. Machine Learning for  $DDoS$  detection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-Deep-Learning-for-DDoS-detection"><span class="nav-number">1.2.3.</span> <span class="nav-text">C. Deep Learning for  $DDoS$  detection</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-METHODOLOGY"><span class="nav-number">1.3.</span> <span class="nav-text">3. METHODOLOGY</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Network-Traffic-Preprocessing"><span class="nav-number">1.3.1.</span> <span class="nav-text">A. Network Traffic Preprocessing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-LUCID-Model-Architecture"><span class="nav-number">1.3.2.</span> <span class="nav-text">B. LUCID Model Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-The-Learning-Procedure"><span class="nav-number">1.3.3.</span> <span class="nav-text">C. The Learning Procedure</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-EXPERIMENTAL-SETUP"><span class="nav-number">1.4.</span> <span class="nav-text">4. EXPERIMENTAL SETUP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Datasets"><span class="nav-number">1.4.1.</span> <span class="nav-text">A. Datasets</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Data-Preparation"><span class="nav-number">1.4.2.</span> <span class="nav-text">B.Data Preparation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-Evaluation-Methodology"><span class="nav-number">1.4.3.</span> <span class="nav-text">C. Evaluation Methodology</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#D-Hyper-parameter-Tuning"><span class="nav-number">1.4.4.</span> <span class="nav-text">D. Hyper-parameter Tuning</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-RESULTS"><span class="nav-number">1.5.</span> <span class="nav-text">5. RESULTS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Detection-Accuracy"><span class="nav-number">1.5.1.</span> <span class="nav-text">A. Detection Accuracy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-State-Of-The-Art-Comparison"><span class="nav-number">1.5.2.</span> <span class="nav-text">B. State-Of-The-Art Comparison</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-Discussion"><span class="nav-number">1.5.3.</span> <span class="nav-text">C. Discussion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-ANALYSIS"><span class="nav-number">1.6.</span> <span class="nav-text">6. ANALYSIS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Kernel-Activations"><span class="nav-number">1.6.1.</span> <span class="nav-text">A. Kernel Activations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Future-Directions"><span class="nav-number">1.6.2.</span> <span class="nav-text">B. Future Directions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-USE-CASE-DDoS-DETECTION-AT-THE-EDGE"><span class="nav-number">1.7.</span> <span class="nav-text">7. USE-CASE: DDoS DETECTION AT THE EDGE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Detection"><span class="nav-number">1.7.1.</span> <span class="nav-text">A. Detection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Training-Time"><span class="nav-number">1.7.2.</span> <span class="nav-text">B. Training Time</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-CONCLUSIONS"><span class="nav-number">1.8.</span> <span class="nav-text">8. CONCLUSIONS</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -220,7 +236,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-28 17:08:33" itemprop="dateModified" datetime="2021-10-28T17:08:33+08:00">2021-10-28</time>
+        <time title="修改时间：2021-11-04 12:19:13" itemprop="dateModified" datetime="2021-11-04T12:19:13+08:00">2021-11-04</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -246,27 +262,126 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="LUCID-一个实用轻量级的基于深度学习的DDoS攻击检测解决方案"><a href="#LUCID-一个实用轻量级的基于深度学习的DDoS攻击检测解决方案" class="headerlink" title="LUCID: 一个实用轻量级的基于深度学习的DDoS攻击检测解决方案"></a>LUCID: 一个实用轻量级的基于深度学习的DDoS攻击检测解决方案</h1><p>摘要：分布式拒绝服务攻击是今天网络中最具有破坏力的威胁之一，它扰乱了必要服务的可用性。DDoS检测的挑战是分析混合的攻击方法，这些攻击方法都可产生实时的攻击流量。在本文中，我们提出了一种实用的、轻量级的深度学习DDoS检测系统——LUCID，它可以利用CNN的性能分析流量并分类为恶意的或良性的。我们有四个主要贡献；(1)一种CNN的创新应用用于检测DDoS流量，并具有低的处理开销，（2）一种数据集不可知的预处理机制，用于产生在线攻击检测的流量观测，（3）一种激活分析用于解释LUCID的DDoS分类，和（4）在资源受限的硬件平台上对解决方案进行了经验验证。使用最新的数据集，LUCID与现有最先进的检测精度相匹配，同时与最先进的相比，处理时间减少了40倍。评估结果表明，该方法适用于资源受限操作环境下的DDoS检测。</p>
-<p>关键词：分布式拒绝服务攻击， 深度学习， CNN， 边缘计算</p>
+        <h1 id="LUCID-一个实用轻量级的基于深度学习的-DDoS-攻击检测解决方案"><a href="#LUCID-一个实用轻量级的基于深度学习的-DDoS-攻击检测解决方案" class="headerlink" title="LUCID: 一个实用轻量级的基于深度学习的 $DDoS$ 攻击检测解决方案"></a>LUCID: 一个实用轻量级的基于深度学习的 $DDoS$ 攻击检测解决方案</h1><p><strong>摘要：</strong>分布式拒绝服务攻击是今天网络中最具有破坏力的威胁之一，它扰乱了必要服务的可用性。 $DDoS$ 检测的挑战是分析混合的攻击方法，这些攻击方法都可产生实时的攻击流量。在本文中，我们提出了一种实用的、轻量级的深度学习 $DDoS$ 检测系统——LUCID，它可以利用CNN的特性分析流量并分类为恶意的或良性的。我们有四个主要贡献；(1)将CNN创新应用于检测 $DDoS$ 流量，并具有低的处理开销，（2）一种数据集不可知的预处理机制，用于产生在线攻击检测的流量观测，（3）一种激活分析用于解释LUCID的 $DDoS$ 分类，和（4）在资源受限的硬件平台上对解决方案进行了经验验证。使用最新的数据集，LUCID与现有最先进的检测精度相匹配，同时与最先进的相比，处理时间减少了40倍。评估结果表明，该方法适用于资源受限操作环境下的 $DDoS$ 检测。</p>
+<p><strong>关键词：分布式拒绝服务攻击， 深度学习， CNN， 边缘计算</strong></p>
 <span id="more"></span>
-
-<h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h2><p>DDoS攻击是当今网络中最有害的威胁之一，它破坏了生产系统和日常生活中基本服务的可用性。尽管自1980年开DDoS攻击就已经被网络研究结构所知，但我们的网络防御在对抗这些攻击时仍被证明是不充分的。</p>
-<p>2016年底，针对域名服务器（DNS）提供商Dyn的攻击，令人担忧的证明了有目标性的DDoS攻击可能造成的破坏【1】。这种特殊的攻击利用了不安全的物联网设备组成的僵尸网络（Mirai），影响了60多种服务。这是当时最大的DDoS攻击流量记录，达到了每秒600Gb。2018年2月针对GitHub的大规模DDoS攻击超出了这个数字【2】。在高峰期，受害者看到的流量为每秒1.3Tbp。攻击者利用了出现中memcached（一种分布式数据库缓存系统）中的漏洞。在此例中，使用伪造的源IP地址（即被攻击的IP地址）进行放大攻击。如果在全球范围内实施，BCP38”网络入口过滤“【3】可以通过阻止带有欺骗IP地址的数据包通过网络来减轻这种攻击。然而，这两个例子说明了DDoS成果的关键在于规模，而不是复杂性。</p>
-<p>近年来，由于攻击方法的多种组合导致DDoS攻击的检测变的更加困难。例如，常见的攻击是攻击者使用多种协议组合的多向量DDoS攻击。为了对抗多样化的攻击技术，需要更细致和更鲁棒的防御技术。基于签名的传统入侵检测系统不能对新的攻击做出方应，现有基于统计异常的检测系统受到定义检测阈值的要求的约束。使用机器学习技术的网络入侵检测系统（NIDSs）正在探索，以解决现有解决方案的局限性。在这方面，深度学习（DL）系统已经被证明在区分DDoS流量和良性流量方面非常有效，它从数据包的低级别、颗粒特征种提取出流量的高级特征表示。然而，现有科学文献中描述的许多基于深度学习的方法从训练角度来看过于资源密集，缺乏在现实世界部署的实用性。具体来说，当前的解决方案不是为在线攻击检测而设计的，在实时网络中约束下，检测算法必须可以处理能跨越多个捕获时间窗口的流量。</p>
-<p>虽然大型CNN架构已被证明可以提供最先进的检测率，但在很少有人关注有限的资源环境中最小化它们的大小并保持良好的性能。正如Dyn攻击和Mirai僵尸网络所观察到的，随着我们在网络上部署更多的物联网设备，从不安全的物联网设备发起DDoS攻击的机会正在增加。这就需要考虑防御机制的部署。Mirai和Memcached等攻击的缓解措施包括使用能够吸收大量DDoS攻击的高性能设备。这些设备位于本地企业或云中。随着为了改善服务供应而出现的边缘计算的发展，考虑保护更靠近边缘的攻击和资源有限的设备的能力变得相当重要。事实上，即使没有资源限制，为了获得最大化系统输出而最小化资源使用也是很有价值的。</p>
-<p>本文结合先进的DDoS检测需要和资源受限设备的部署能力，做出以下贡献：</p>
+<h2 id="1-INTRODUCTION"><a href="#1-INTRODUCTION" class="headerlink" title="1. INTRODUCTION"></a>1. INTRODUCTION</h2><p> $DDoS$ 攻击是当今网络中最有害的威胁之一，它破坏了生产系统和日常生活中基本服务的可用性。尽管自1980年开 $DDoS$ 攻击就已经被网络研究机构所知，但我们的网络防御在对抗这些攻击时仍被证明是不充分的。</p>
+<p>2016年底，针对域名服务器（DNS）提供商Dyn的攻击，令人担忧的证明了有目标性的 $DDoS$ 攻击可能造成的破坏【1】。这种特殊的攻击利用了不安全的物联网设备组成的僵尸网络（Mirai），影响了60多种服务。这是当时最大的 $DDoS$ 攻击流量记录，达到了每秒600Gb。2018年2月针对GitHub的大规模 $DDoS$ 攻击超出了这个数字【2】。在高峰期，受害者看到的流量为每秒1.3Tbp。攻击者利用了memcached（一种分布式数据库缓存系统）中出现的漏洞。在此例中，使用伪造的源IP地址（即被攻击的IP地址）进行放大攻击。如果在全球范围内实施，BCP38”网络入口过滤“【3】可以通过阻止带有欺骗IP地址的数据包通过网络来减轻这种攻击。然而，这两个例子说明了 $DDoS$ 成果的关键在于规模，而不是复杂性。</p>
+<p>近年来，由于攻击方法的多种组合导致 $DDoS$ 攻击的检测变的更加困难。例如，常见的攻击是攻击者使用多种协议组合的多向量 $DDoS$ 攻击。为了对抗多样化的攻击技术，需要更细致和更鲁棒的防御技术。基于签名的传统入侵检测系统不能对新的攻击做出反应，现有基于统计异常的检测系统受到定义检测阈值的要求的约束。使用机器学习技术的网络入侵检测系统（NIDSs）正在探索，以解决现有解决方案的局限性。在这方面，深度学习（DL）系统已经被证明在区分 $DDoS$ 流量和良性流量方面非常有效，它从数据包的低级别、颗粒特征种提取出流量的高级特征表示。然而，现有科学文献中描述的许多基于深度学习的方法从训练角度来看过于资源密集，缺乏在现实世界部署的实用性。具体来说，当前的解决方案不是为在线攻击检测而设计的，在实时网络约束下，检测算法必须可以处理能跨越多个捕获时间窗口的流量。</p>
+<p>虽然大型CNN架构已被证明可以提供最先进的检测率，但在很少有人关注有限的资源环境中最小化它们的大小并保持良好的性能。正如Dyn攻击和Mirai僵尸网络所观察到的，随着我们在网络上部署更多的物联网设备，从不安全的物联网设备发起 $DDoS$ 攻击的机会正在增加。这就需要考虑防御机制的部署。Mirai和Memcached等攻击的缓解措施包括使用能够吸收大量 $DDoS$ 攻击的高性能设备。这些设备位于本地企业或云中。随着为了改善服务供应而出现的边缘计算的发展，考虑保护更靠近边缘的攻击和资源有限的设备的能力变得相当重要。事实上，即使没有资源限制，为了获得最大化系统输出而最小化资源使用也是很有价值的。</p>
+<p>本文结合先进的 $DDoS$ 检测需要和资源受限设备的部署能力，做出以下贡献：</p>
 <ul>
-<li><p>一种基于深度学习的检测架构，它适用于资源受限的在线环境，其利用了CNN来学习DDos和良性流量的行为，并具有低的处理开销和低的攻击检测时间。我们称该模型为LUCID（Lightweight, Usable CNN in DDoS Detection）。</p>
-</li>
+<li>一种基于深度学习的检测架构，它适用于资源受限的在线环境，其利用了CNN来学习 $DDoS$ 和良性流量的行为，并具有低的处理开销和低的攻击检测时间。我们称该模型为LUCID（Lightweight, Usable CNN in  $DDoS$  Detection）。</li>
 <li><p>一种与数据集无关的预处理机制，产生与现有在线系统中收集的数据一致的流量观测数据，其中检测算法必须处理在预定义的时间窗口内收集的流量片段。</p>
 </li>
-<li><p>使用核激活分析，解释LUCID在进行DDoS分类时所重视的特性。</p>
+<li><p>使用核激活分析，解释LUCID在进行 $DDoS$ 分类时所重视的特性。</p>
 </li>
-<li><p>LUCID在资源受限的硬件平台上的经验验证，以证明该方法在边缘计算场景中的适用性，该场景中设备具有有限的计算能力。</p>
-</li>
+<li>对LUCID在资源受限的硬件平台上的进行经验验证，以证明该方法在边缘计算场景中的适用性，该场景中设备具有有限的计算能力。</li>
 </ul>
-<p>本文的其余部分结构如下：<strong>Sec2</strong> 回顾和讨论相关的工作。<strong>Sec3</strong> 详细说明关于网络流量处理的方法和LUCID CNN模型的架构。<strong>Sec4</strong> 描述了实验设置，详细介绍了数据集和LUCID的开发以及超参数调优过程。<strong>Sec5</strong> 评估LUCID并与最先进的方法进行比较。<strong>Sec6</strong> 介绍了我们的核激活分析，用于解释LUCID的分类过程。<strong>Sec7</strong> 展示边缘DDoS检测的实验和结果。最后，<strong>Sec8</strong> 给出结论。</p>
-<h2 id="2-Related-Work"><a href="#2-Related-Work" class="headerlink" title="2. Related Work"></a>2. Related Work</h2><p>自1999年第一次报道DDoS攻击事件起，网络研究机构就已经在探索DDoS检测和缓解技术。在本章中，</p>
+<p>本文的其余部分结构如下：<strong>Sec2</strong> 回顾和讨论相关的工作。<strong>Sec3</strong> 详细说明关于网络流量处理的方法和LUCID CNN模型的架构。<strong>Sec4</strong> 描述了实验设置，详细介绍了数据集和LUCID的开发以及超参数调优过程。<strong>Sec5</strong> 评估LUCID并与最先进的方法进行比较。<strong>Sec6</strong> 介绍了我们的核激活分析，用于解释LUCID的分类过程。<strong>Sec7</strong> 展示边缘 $DDoS$ 检测的实验和结果。最后，<strong>Sec8</strong> 给出结论。</p>
+<h2 id="2-RELATED-WORK"><a href="#2-RELATED-WORK" class="headerlink" title="2. RELATED WORK"></a>2. RELATED WORK</h2><p>自1999年第一次报道 $DDoS$ 攻击事件起【23】，网络研究机构就已经在探索 $DDoS$ 检测和缓解技术。在本节中，我们将回顾和讨论基于异常的 $DDoS$ 检测技术，分为统计方法和机器学习方法，并特别关注深度学习技术。</p>
+<h3 id="A-Statistical-approaches-to-DDoS-detection"><a href="#A-Statistical-approaches-to-DDoS-detection" class="headerlink" title="A. Statistical approaches to  $DDoS$  detection"></a>A. Statistical approaches to  $DDoS$  detection</h3><p>衡量网络流量属性的统计属性是 $DDoS$ 检测的常用方法，通过包括监控特定报文头的熵变化。根据定义，熵是对数据集的多样性或随机性的度量。基于熵的 $DDoS$ 检测方法自21世纪初以来就在科学文献中被提出，其假设是在大流量型 $DDoS$ 攻击中，流量特征的随机性受到突然变化的影响。其基本原理是，大流量型 $DDoS$ 攻击的典型特征是大量攻击者（数十万【24】），通常利用被入侵的设备向一个或多个终端主机（受害者）发送大量流量。因此，这些攻击通常会导致流量的某些属性（如目的IP地址）分布下降，或其它属性（如源IP地址）分布增加。 $DDoS$ 攻击的识别通常是通过这些分布指标的阈值来确定的。</p>
+<p>在使用这种方法的第一批发表的论文中，Feinstein等人【25】提出了一种基于源IP地址熵和卡方分布计算的 $DDoS$ 检测技术。作者观察到，与 $DDoS$ 攻击造成的变化相比，合法流量的波动而导致的源IP地址熵和卡方统计量的变化很小。类似的，【26】结合了熵和流量特征来检测大流量型 $DDoS$ 攻击；【27】的作者提出了一种基于目的IP地址熵和IP及TCP层属性动态组合的熵评分系统，用于检测和缓解 $DDoS$ 攻击。</p>
+<p>这些基于熵的技术的一个常见缺点是需要选择一个适当的检测阈值。考虑到不同的网络中流量类型和容量差异，为了在不同的攻击场景中最大限度地减少误报率和漏报率，面临的主要挑战是如何确定合适的检测阈值。一种解决方案是动态调整阈值，以自适应网络流量的正常波动，如【28】，【29】。</p>
+<p>重要的是，监控流量属性的分布并不能提供足够的信息来区分良性和恶意流量。为了解决这个问题，一些方法在包速率上应用一个基本阈值【30】或回溯技术【31】，【32】。</p>
+<p>【33】采用了另一种统计方法，Ahmed等人使用包属性和流量流级特征统计来区分良性流量和 $DDoS$ 流量。然而，这个解决方案可能不适合在线系统，因为一些流级别的数据用于检测，如总字节数，从源到目的地的数据包数量，和流的持续时间，而一个观测时间窗口内收集的流量特征不能计算出上述数据。在【34】-【39】和其他许多方法中，也提出了基于流量级统计的方法。特别地，【36】-【39】中CNNs和其它DL模型的输入是流量级统计数据，如第 <strong>Sec2-C</strong> 节所述。为了克服统计方法在 $DDoS$ 检测中的局限性，机器学习技术在 $DDoS$ 检测中的应用已经被探索。</p>
+<h3 id="B-Machine-Learning-for-DDoS-detection"><a href="#B-Machine-Learning-for-DDoS-detection" class="headerlink" title="B. Machine Learning for  $DDoS$  detection"></a>B. Machine Learning for  $DDoS$  detection</h3><p>正如Sommer和Paxson在【40】中所指出的，机器学习在网络异常检测中的应用已经得到了广泛的研究。2016年Buczak和Guven的调查【41】引用了支持向量机（SVM）、K-最近邻（K-NN）、随机森林、贝叶斯等在网络安全入侵检测中取得成功的例子。然而，由于网络入侵检测的特殊挑战，如很高的错误成本、流量变化等，这些解决方案在”现实世界“的采用受到了限制。近年来，现实的网络流量数据集的可用性逐渐增加，数据科学家和网络研究人员之间的参与也在增加，以改善模型的可解释性，从而可以为网络攻击开发出更实用的机器学习（ML）解决方案。针对 $DDoS$ 检测的机器学习技术的一些首次应用是用于流量分类。具体来说，为了区分良性和恶意流量，使用了诸如extratree和多层感知器等技术【42】，【43】。</p>
+<p>考虑到来自虚拟机的 $DDoS$ 攻击的实际操作，He等人【44】评估了9种ML算法，以确定它们检测来自云上的发起的 $DDoS$ 攻击的能力。结果表明，SVM linear kernel具有较高的准确率(99.7%)和较低的误报率（&lt;0.07%）。虽然没有提供关于检测时间或用于评估的数据集的信息，但结果说明了ML模型范围内准确性和性能的可变性。这反映在整个文献中，如【45】，【46】，算法性能高度依赖于所评估的选定特征（和数据集）。这激发了深度学习用于 $DDoS$ 检测的考虑，从而减少了对特征工程的依赖。</p>
+<h3 id="C-Deep-Learning-for-DDoS-detection"><a href="#C-Deep-Learning-for-DDoS-detection" class="headerlink" title="C. Deep Learning for  $DDoS$  detection"></a>C. Deep Learning for  $DDoS$  detection</h3><p>目前已有一小部分人研究DL在 $DDoS$ 检测中的应用。例如，在【47】中，作者通过结合熵特征和基于深度学习的分类器解决了基于熵检测的阈值设定问题。评估表明，与基于阈值的方法相比，性能得到了提高，具有更高的精度和召回率。在【48】中，将递归神经网络（RNN）-入侵检测系统（IDS）与之前介绍的一系列ML技术（如J48、人工神经网络（ANN）、随机森林和支持向量机）应用于NSL-KDD【49】数据集进行了比较。RNN技术具有较高的准确率和检测率。</p>
+<p>一些基于CNN的工作【36】-【39】，如 <strong>Sec2-A</strong> 中所标识的，使用流级统计数据（总字节数、流持续时间、标志总数等）作为基于DL的架构的输入。【36】和【37】将统计特征与数据包有效载荷相结合，对提出的入侵防御系统进行训练。</p>
+<p>在【19】中，Kehe Wu等人提出了一种基于CNN的流量多分类入侵检测系统。通过将NSL-KDD数据集的流级特征编码到11✖11数组中，验证了所提出的神经网络模型。评价结果表明，与可训练参数多20倍的复杂模型相比，该模型具有良好的性能。【20】的作者也采用了类似的方法，在NSL-KDD和UNSW-NB-15【50】数据集上验证了基于CNN的IDS。在【51】中，作者通过比较3个流量数据集（NSL-KDD，Kyoto Honeypot【52】，MAWILab【53】）上的一系列架构（浅、中、深，以反映卷积层和池化层的数量），研究了CNN在IDS中的应用。结果表明，使用了单个卷积层和单个最大池化层的浅层CNN模型，池化层表现最好。然而，在数据集的检测精度结果上有显著的差异，这表明了模型的不稳定性。</p>
+<p>针对我们的 $DDoS$ 问题，Ghanbari等人提出了一种基于离散小波变换和方差分形维数轨迹的特征提取算法，以最大限度地提高CNN检测 $DDoS$ 攻击的敏感性【5】。评估结果表明，该方法在CAIDA  $DDoS$ 攻击数据集【54】上识别 $DDoS$ 攻击的准确率为87.35%。尽管作者声称他们的方法可以在一系列环境中实时检测 $DDoS$ 攻击，但没有报告支持这一说法的性能测量。</p>
+<p>DeepDefense【4】结合CNN和RNN，将滑动窗口内收集到的原始流量的包特征转换为数组。结果表明，在选定的ISCX2012数据集【55】中， $DDoS$ 攻击检测具有较高的准确性。然而，尚不清楚这些结果是在未见的测试数据上获得的，还是来自训练阶段的结果。此外，模型中可训练参数的数量非常大，说明训练阶段时间长，计算资源密集。这将极大地挑战在资源有限的在线系统中实施，这将在 <strong>Sec5</strong> 和 <strong>Sec7</strong> 中讨论。</p>
+<p>如前所述，尽管深度学习提供了一种有效的 $DDoS$ 检测方法的潜力，但现有的方法因其在资源受限环境中在线实施的适用性而受到限制。在 <strong>Sec5</strong> 中，我们将我们提出的解决方案LUCID与最先进的【4】、【35】、【36】、【38】、【47】进行了比较，并展示了LUCID的贡献。</p>
+<h2 id="3-METHODOLOGY"><a href="#3-METHODOLOGY" class="headerlink" title="3. METHODOLOGY"></a>3. METHODOLOGY</h2><p>在本文中，我们提出了一种基于CNN的 $DDoS$ 检测解决方案——LUCID，该模型能被部署在在线资源受限环境中。我们的CNN封装了对流量中的恶意活动的学习，从而能够识别 $DDoS$ 特征，而不管它们的时间位置。这是CNN的一个基础优势，无论特征出现在输入的哪个位置，都产生相同的输出。在训练模型的同时，对特征的封装和学习消除了对过多特征工程、排序和选择的需要。为了支持在线攻击检测系统，我们对网络流量使用了一种新的预处理方法，生成一个空间数据表示作为CNN的输入。在这一节中，我们介绍了网络流量的预处理方法，CNN模型的体系结构，以及学习过程。</p>
+<h3 id="A-Network-Traffic-Preprocessing"><a href="#A-Network-Traffic-Preprocessing" class="headerlink" title="A. Network Traffic Preprocessing"></a>A. Network Traffic Preprocessing</h3><p>网络流量由端点间的数据流组成。由于通信链路的共享性质，来自不同数据流的包被复用，从而导致来自同一流的包被分离开来进行传输。这意味着对NIDS的实时流量表示的处理与对包含完整流的静态数据集的处理有很大不同。出于同样的原因，生成流级统计数据的能力，正如 <strong>Sec2</strong> 中描述的许多现有工作所依赖的，在在线系统中是不可行的。</p>
+<p>为了开发我们的在线NIDS，我们创建了一个工具，可以将从数据集的原始网络流量提取的数据包转换成类似数组的数据结构，并基于时间窗口将它们分割成子流。以这种方式将输入塑造成包流，从而创建一个空间数据表示，这使得CNN能够通过滑动在这种输入上的卷积过滤器来了解 $DDoS$ 攻击和良性流量的特征，以识别显著的模式。这种形式的输入与在线部署中捕获的流量兼容。该过程在算法1中进行了说明，并在下面进行描述。符号定义见表1。</p>
+<p><img src="/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/table1.PNG" alt="表1"></p>
+<p><img src="/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/algorithm1.PNG" alt="算法1"></p>
+<p><strong>特征提取（Feature extraction）</strong>。给定数据集中的流量跟踪文件和预定义的长度为 $t$ 秒的时间窗口，算法从文件中收集所有在 $t_0$（第一个数据包的捕获时间）到 $t_0+t$ 时间的所有数据包。算法从每个数据包中提取11个属性（见表2），我们直观地排除了那些不利于模型泛化的属性，如IP地址、TCP/UDP端口号（针对终端主机和用户应用）、链路层封装类型（链接到网络接口）和应用层属性（例如，IRC或HTTP协议属性）。</p>
+<p><img src="/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/table2.PNG" alt></p>
+<p><strong>数据预处理算法（Data processing algorithm）</strong>。在算法1的第 4-12 行描述了该过程，该过程模拟了在发送到异常检测算法之前一定的时间窗口 $t$ 内，在线IDS的流量捕获过程。因此，这样的算法必须基于部分网络流量做出决策，而不需要了解其整个生命周期。为了模拟这一过程，我们将属于同一个双向网络流的数据包的属性按时间顺序组合到一起，使其构成 $[n, f]$ 的数组样本（如表2所示），其中 $f$ 是特征的数量（11），$n$ 是每个流的时间窗口内解析数据包的最大数量。$t$ 和 $n$ 是CNN的超参数。长度大于 $n$ 的流被截断，较短的流在归一化后的下一阶段末尾补零。在时间窗口 $[t_0+t,t_0+2t]$ 内对数据包重复同样的操作，以此类推，直到文件结束。</p>
+<p>逻辑上，我们假设短时间窗口使在线系统能够在很短的时间内检测到 $DDoS$ 攻击。反之，$t$ 和 $n$ 的值越高，对检测算法提供的流量信息就越多，我们希望能够获得更高的检测精度。我们的CNN与 $t$ 和 $n$ 值的变化关系将在 <strong>Sec4</strong> 中评估。</p>
+<p>这个过程的输出可以被看作是一个双向通信流在时间点 $t$ 的取得的样本（代表算法1中的$\varepsilon[t,id]$）。图1给出了样本数组的图形表示，其中一个数组的行代表的样本数据包捕获在同一时间窗口，同一列表示的数据包表示来自同一个双向通信流。</p>
+<p><img src="/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/fig1.PNG" alt></p>
+<p><strong>归一化和填充（Normalization and padding）</strong>。每个特征值被归一化到 $[0,1]$ 大小，样本缺失部分由零填充，因此每个样本的长度都是固定的 $n$ ，因为被用于CNN学习的数据集的每个样本必须是相同固定长度的。在图1中，数组 $\varepsilon$ 的每个非空元素都是一个数据包特征的紧凑图形表示。在每个 $\varepsilon$ 样本中，彩色行代表数据包的11个归一化的特征属性（例如，表2的上半部分），而空白色的行代表补零（即表2的下半部分）。请注意，空样本在图1中仅用于可视化，并不包含在数据集。当  $\varepsilon[t’,id]$ 为空时，表示在时间窗口 $[t’,t’+t]$ （如  $\varepsilon[t_0,F4]$ ）内没有捕获到流 $id$ 的数据包。</p>
+<p><strong>加标签（Labelling）</strong>。每个示例   $\varepsilon[t,id]$ 通过将其流标识 $id$ 与原始数据集提供的标签（算法1中的第14-16行）进行匹配标记。这意味着在图1中每列的标签值不变。</p>
+<h3 id="B-LUCID-Model-Architecture"><a href="#B-LUCID-Model-Architecture" class="headerlink" title="B. LUCID Model Architecture"></a>B. LUCID Model Architecture</h3><p>我们将算法1的输出作为CNN模型的输入，用于在线攻击检测。LUCID将流量分为两类，一类是恶意的，另一类是良性的。我们的目标是最小化CNN模型的复杂度和性能，以便在资源受限的设备上进行可行的部署。为了实现这一点，我们提出的方法是一个轻量级的、有监督的检测系统，其中包含一个CNN，类似于来自自然语言处理领域的【9】。CNN共享和重用了与卷积核相关的参数，而在传统的神经网络中，每个权值只使用一次。这减少了模型的存储和内存需求。完整的模型结构如图2所示，并在下一节中进行描述，超参数调优和消融研究将在 <strong>Sec4</strong> 中讨论。</p>
+<p><img src="/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/fig2.PNG" alt></p>
+<p><strong>输入层（Input layer）</strong>。回想一下，每条通信流都已按 <strong>Sec. 3-A</strong> 提取了时间窗口内数据包的特征，为了使CNN能够学习同一条流的包之间的相关性，我们将其组合成一种新的空间表示。因此，第一层以一个大小为 $n\times f$ 的矩阵 $F$ 表示的流量片段作为输入。$F$ 包含 $n$ 个独立的包向量，$F=\{pkt_1,…,pkt_n\}$ ，其中 $pkt_n$ 为流中的第 $n$ 个包，每个包向量有 $f=11$ 个特征。</p>
+<p><strong>卷积神经网络层（CNN layer）</strong>。如图2所示，每个输入矩阵 $F$ 由一个卷积层对其进行操作，该卷积层包含 $k$ 个大小为 $h\times f$ 的滤波器，其中 $h$ 为每个滤波器的长度，$F=11$ 。每个滤波器，也称为卷积核或滑动窗口，它将在 $F$ 上进行1步卷积，以提取和学习包含检测 $DDoS$ 和良性流有用信息的本地特征。 $k$ 个滤波器的每一个都会生成一个大小为 $(n-h+1)$ 的激活映射 $a$ ，$a_k=ReLU(Conv(F)W_k,b_k)$ ，其中 $W_k$ 和 $b_k$ 为训练阶段学习到的第 $k$ 个滤波器的权值和偏置参数。为了在学习滤波器中引入非线性，根据CNN约定，我们使用修正的线性激活函数 $ReLU(x)=max\{0,x\}$ 。最后将所有的激活映射图堆叠起来，生成一个大小为 $(n-h+1)\times k$ 的激活矩阵 $A$ ，使 $A=[a_1]…[a_k]$ 。</p>
+<p>在我们的架构中包含CNN有两个主要好处。首先，与标准神经网络相比，它使模型受益于效率的提高，因为每个过滤器中的权重在整个输入中重复使用。共享权重，而不是与一个标准神经网络的完整端到端连接，使模型更轻，并减少其内存占用，因为可学习参数的数量大大减少。其次，在训练阶段，CNN自动学习每个滤波器的权值和偏差，在训练过程中，重要特征的学习被封装在得到的模型中。这减少了统计和传统机器学习方法所涉及的耗时的特征工程和排名，而传统机器学习依赖于专家的知识积累。因此，该模型更能适应 $DDoS$ 攻击的新变化，因为训练阶段可以随时简单地使用新的训练数据进行重复，而无需精心设计和排名新的特征。</p>
+<p><strong>最大池化层（Max pooling layer）</strong>。对于最大池化，我们沿着 $A$ 的第一个维度向下采样，这代表了输入的时间特性。当池大小为 $m$ 时，输出矩阵 $m_o$ 的大小为 $((n-h+1)/m)\times k$ ，其中包含每个学习滤波器的最大 $m$ 个激活量，即 $m_o=[max(a_1)|…|max(a_k)]$ 。通过这种方式，该模型忽略了产生较小激活的不太有用的信息，而将注意力放在较大的激活上。这也意味着我们要处理激活的位置信息，即它在原始流中发生的位置，给予更重要的特征编码，从而降低网络的复杂性。然后将 $m_o$ 展平，生成最终的一维特征向量 $v$ ，输入到分类层。</p>
+<p><strong>分类层（Classification layer）</strong>。$v$ 输入到大小相同的全连接层，输出层有一个唯一节点。输出的 $x$ 传递给 $sigmoid$ 激活函数，使 $\sigma(x)=1/(1+e^{-x} )$ 。这将限制激活值在0到1之间，因此返回给定流为恶意 $DDoS$ 攻击的概率为 $p\in[0,1]$ 。当 $p&gt;0.5$ 时，给定通信流被判定为 $DDoS$ 攻击，否则为良性。</p>
+<h3 id="C-The-Learning-Procedure"><a href="#C-The-Learning-Procedure" class="headerlink" title="C. The Learning Procedure"></a>C. The Learning Procedure</h3><p>当训练LUCID时，目标是通过迭代更新模型中包含的所有权重和偏差来最小化其 $cost$ 函数。这些权重和偏差也被称为可训练的或可学习的参数。$cost$ 函数计算模型的预测与输入样本的实际标签之间的 $cost$，也称为误差或损失。因此，通过最小化这个 $cost$ 函数，我们减少了预测误差。在训练的每一次迭代中，输入数据通过网络前馈，计算出误差，然后这个误差通过网络反向传播。当进一步的更新不能进一步减少误差或训练过程达到设定的最大 $epochs$ 数，可认为模型达到了收敛。在我们的问题中有两个类，使用二元交叉熵代价函数。形式上，计算一批 $s$ 样本的误差的 $cost$ 函数可以写成：</p>
+<p>$cost=-\frac{1}{s}\displaystyle \sum^{s}_{j=1}{(y_i\log p_j+(1-y_i)\log(1-p_j))}$</p>
+<p>其中 $y_i$ 为 $s$ 批每个流 $j$ 的真实标签，$p_j$ 为流 $j$ 是恶意 $DDoS$ 流的预测概率。这是一种监督学习，因为我们的数据集中的每个流都被标记为真实值，要么是 $DDoS$ ，要么是 $benign$ 。为了减少学习过程中的偏差，我们确保这些数据集中恶意流的数量和良性流的数量保持平衡，这使得模型从流量中学习正确的特征表示具有更大的可信度。正如前面所强调的，学习过程通过权重和偏置参数封装到在模型中，这意味着我们的方法不需要大量的专家来制作特定的特征，也不需要在预处理过程中从统计学上评估它们的重要性，这与许多现有的方法不同，如 <strong>Sec. 2</strong> 所述。</p>
+<h2 id="4-EXPERIMENTAL-SETUP"><a href="#4-EXPERIMENTAL-SETUP" class="headerlink" title="4. EXPERIMENTAL SETUP"></a>4. EXPERIMENTAL SETUP</h2><h3 id="A-Datasets"><a href="#A-Datasets" class="headerlink" title="A. Datasets"></a>A. Datasets</h3><p>我们的CNN模型使用加拿大新不伦瑞克大学（UNB）的加拿大网络安全研究所提供的最新数据集ISCX2012【55】、CIC2017【56】和CSECIC2018【57】进行了验证。这些数据集由几天的网络活动构成，包含正常的和恶意的，以及DDoS攻击。这三个数据集以PCAP格式的存储公开，文件中包含有完整的数据包有效载荷，附件中text文件包含了每条通信流的标签和统计详细信息。</p>
+<p>UNB的研究人员通过使用配置文件生成了这些数据集，以准确地表示人类行为和攻击行为的抽象属性。一个配置文件表示了正常的网络活动，并且通过分析真实的流量轨迹，为应用程序和协议（HTTP、SMTP、SSH、IMAP、POP3和FTP）的产生提供了分布模型。其它配置文件基于最近的安全报告描述了各种攻击场景。它们被用来模仿恶意攻击者的行为，通过自定义僵尸网络和知名的 $DDoS$ 攻击工具，如高轨道离子炮（HOIC）【58】和它的前身，低轨道离子炮（LOIC）【59】。HOIC和LOIC在一些高度公开的攻击如反对PayPal，Mastercard，Visa，Amazon，Megaupload等【60】企业时已经被 $Anonymous$ 和其他黑客组织广泛使用。</p>
+<p>表3显示了本工作中使用的三个数据集的部分内容。在表中，<strong>Traffic trace</strong> 列表明数据源的名称，分别来自【55】、【56】和【57】。具体来说，ISCX2012-Tue15的数据包含基于 $IRC$ 僵尸网络的 $DDoS$ 攻击。CIC2017-Fri7PM 的数据包含一个使用LOIC生成的 HTTP DDoS​，而CSECIC2018-Wed21 的数据包含一个使用HOIC生成的HTTP DDoS。对于原始文件，CIC2017-Fri7PM 的 $DDoS$ 攻击时间段为 $3.30PM-5.00PM$ ，以区分其他网络攻击（端口扫描和后门）相关的恶意包。</p>
+<p><img src="/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/table3.PNG" alt></p>
+<p>在初始设计中，模型在ISCX2012数据集上进行训练和验证，产生了高精度的结果。然而，在CIC2017数据集上测试模型证实了一个普遍的现象，即在一个数据集上训练的模型不一定在一个全新的数据集上表现良好。特别地，我们得到的假阴性率（漏报率）约为17%。如前所述，这可以归因于在两个数据集中表示的不同攻击。我们在这项工作中尝试的是开发一个模型，当跨混合数据集进行训练和验证时，可以在完全看不见的测试数据上重现高性能结果。为了实现这一点，将生成如 <strong>Sec. 4-B</strong> 所描述的组合训练数据集。</p>
+<h3 id="B-Data-Preparation"><a href="#B-Data-Preparation" class="headerlink" title="B.Data Preparation"></a>B.Data Preparation</h3><p>我们从ISCX2012中提取了 37378 条DDoS攻击流，并且从中随机选择了 37378 条良性流用于平衡。对于CIC2017和CSECIC2018数据集，我们重复了这个过程，分别提取的通信流数量是 97718/97718 bengin/DDoS 和 360832/360832 benign/DDoS。</p>
+<p>在预处理阶段之后，通信流被转换成类似数组的数据结构（Sec. 3-A），三个数据集分别被分成训练集（90%）和测试集（10%），其中10%的测试集用于验证。请注意，分割操作是在每个通信流的基础上执行的，以确保相同的通信流中获得的样本最终都被分配到相同的数据集中，从而避免测试集数据被训练的数据“污染”。最后，我们将每年的训练数据集按相同比例进行平衡组合，从而产生一个单独的训练集。我们对验证和测试分割做了同样的操作，以获得最终的数据集，在本文的其余部分中称为UNB201X。UNB201X训练集和验证集只用于训练模型和调优超参数（<strong>Sec. 4-D</strong>），测试集在 <strong>Sec. 5</strong> 和 <strong>7</strong> 中用于评估模型。测试集要么作为一个综合测试集，要么作为每个单独的数据集用于先进模型的比较。</p>
+<p>最后UNB201X分割的情况见表4，其中报告了样本数量与时间窗口大小 $t$ 的函数关系。如表4所示，该超参数值越低，样本数量越大。直观上，使用短时间窗口会导致通信流被分割成许多小片段，而长时间的窗口则会产生相反的效果。相比之下，$n$ 的值对数据集中最终的样本数量的影响可以忽略不计。</p>
+<p><img src="/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/table4.PNG" alt></p>
+<h3 id="C-Evaluation-Methodology"><a href="#C-Evaluation-Methodology" class="headerlink" title="C. Evaluation Methodology"></a>C. Evaluation Methodology</h3><p>按照文献的约定，我们评估中使用了 <strong>Accuracy(ACC)、False Positive Rate(FPR)、Precision(or Positive Predictive Value(PPV))、 Recall(or True Positive Rate(TPR)) and F1 Score(F1)</strong>，重点关注后者。$Accuracy$ 是正确分类的样本的百分比（包含良性和 $DDoS$）。$FPR$ 表示被错误分类为 $DDoS$ 的样本的百分比。$PPV$ 是正确检测到的 $DDoS$ 样本数与所有检测到的 $DDoS$ 样本总数之比（$true\, and\, false$）。$TPR$ 表示被正确分类的 $DDoS$ 样本的百分比。$F1$ 分数是对模型表现得全面衡量，即 $PPV$ 和 $TPR$ 的调和平均数。这些指标的正式定义如下：<br>$ACC=\frac{TP+TN}{TP+TN+FP+FN}$</p>
+<p>$FPR=\frac{FP}{FP+TN}$</p>
+<p>$PPV=\frac{TP}{TP+FP}$</p>
+<p>$TPR=\frac{TP}{TP+FN}$</p>
+<p>$F1=2 \cdot \frac{PPV \cdot TPR}{PPV+TPR}$</p>
+<p>其中 $TP=True \, Positives, TN=True \, Negatives, FP=False \, Positives, FN=False \, Negatives$ 。</p>
+<p>训练过程的输出是可训练参数和超参数的组合，目的要使验证集上的 $F1$ 分数最大化，或者换句话说，使假阳性和假阴性的总数最小化。</p>
+<p>模型训练和验证都在同一台服务器级计算机上进行，该计算机配备了两个 16 核 Intel Xeon Silver 4110 @​2.1 GHz CPU，64GB RAM。这些模型在 Python v3.6 上使用 Tensorflow 1.13.1的 Keras API实现。</p>
+<h3 id="D-Hyper-parameter-Tuning"><a href="#D-Hyper-parameter-Tuning" class="headerlink" title="D. Hyper-parameter Tuning"></a>D. Hyper-parameter Tuning</h3><p>超参数的调优是优化模型精度的重要一步，因为超参数的值会影响模型的复杂性和学习过程。在我们的实验之前，我们根据初步调优的结果和每个参数描述的动机来经验地选择超参数值。然后我们采用网格搜索策略，以 $F1$ 分数作为性能度量来探索超参数集。在网格中的每一个点上，训练都无限期地继续，当连续 $25$ 次损失没有减少时就停止。然后，搜索过程保存 $F1$ 分数并移动到下一个点。</p>
+<p>根据 <strong>Sec. 4-B</strong>，UNB201X 被分为训练、验证和测试集。对于超参数调优，我们只使用验证集。重要的是，我们没有对测试集进行调优，因为那样可能会人为地提高性能。测试集是完全不可见的，仅用于生成我们的实验结果，这些结果在 <strong>Sec. 5</strong> 中报告。</p>
+<p><strong>最大包的数量</strong>。$n$ 对于流量的特征和捕获通信流的时间模型是重要的。$n$ 表示样本中按时间顺序记录的一个流的最大包数。</p>
+<p>最终数据集描述了给定时间窗口下流的生命周期的一部分，包括包的（相对）时间信息。基于重复的 $DDoS$ 攻击使用的是一组大约恒定速率的消息，因此 $n$ 的值很小就足以发现包特征中的时间模式，因此可以确定最小数量的可训练参数。另一方面，更为复杂的攻击，例如使用HOIC工具执行的攻击，它使用多个HTTP头使请求看起来合法，可能需要更多的包来达到所需的准确性。考虑到用于模拟数据集中工具流量的各种 $DDoS$ 工具（基于IRC的bot、LOIC和HOIC），我们对 $n$ 进行了 1 到 100 之间的实验，并根据 $F1$ 分数比较了性能。图3给出了不同时间窗口 $t$ 下的结果，但为了直观，其他超参数的值是固定的。</p>
+<p><img src="/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/fig3.PNG" alt></p>
+<p>当 $n&lt;5$ 时，$F1$ 分数随 $n$ 的值逐渐增加，当 $n\le 5$ 时趋于稳定。然而，当 $n=100$ 时，$F1$ 分数仍然会增加。虽然低 $n$ 的值可以用来加快检测时间（更少的卷积操作）和减少所需的存储和内存（样本大小更小），但是我们的目标是实现一个轻量级的模型，我们希望平衡精度和资源消耗。这将在 <strong>Sec. 7</strong> 中证明。</p>
+<p><strong>时间窗口（Time Window</strong>）。时间窗口 $t$ 被用于模拟在线系统的包捕获过程（见 <strong>Sec. 3-A</strong>）。我们在不同的 $n$ 值下对 1~100​ 秒的时间窗口进行 $F1$ 评估（如相关的工作，【4】等）。结果如图 4 所示。</p>
+<p><img src="/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/fig4.PNG" alt></p>
+<p>虽然训练集中的样本数量会随着 $t$ 的增加而减少（见表4），但是CNN对于 $n&gt;1$ 这个超参数相对不敏感。当 $n=1$ 时，通信流由形状为 $[1,f]$ 的样本表示，即不管时间窗口的大小如何，只有一个数据包特征被捕获。在这种极端情况下，由于CNN不能将同一样本内不同包的属性关联起来，所以 $F1$ 得分受训练集中样本数量的影响更大（样本越多越好）。</p>
+<p><strong>卷积核的高度（Height of convolutional filters）</strong>。$h$ 用于决定卷积核的高度（卷积核宽度被固定为11，即特征的数量），即每次卷积操作所涉及的包的数量。在 $h=1,2,3,4,5$ 时进行测试，我们观察到 $h=1(0.9934)$ 和 $h=3(0.9950)$ 之间的 $F1$ 评分有一个很小但值得注意的差异，在 $h=3$ 后没有很大改善。</p>
+<p><strong>卷积核的数量（Number of convolutional filters）</strong>。按照通常的做法，我们将卷积核的数量以2的幂从 $k=1$ 增加到 $k=64$ 。我们观察到随着 $k$ 值得增加，$F1$ 分数稳步增加，这是模型中可训练参数数量增加的直接结果。</p>
+<p><strong>最终超参数（Resulting hyper-parameter set）</strong>。在对 2835 个超参数组合进行了全面的网格搜索后，我们选择了使UNB201X验证集上的 $F1$ 得分最大的CNN模型配置（表5），即：</p>
+<p>$n=100,t=100,k=64,h=3,m=98$</p>
+<p>由此产生的模型，训练使用的 $batch$ _$size=2048 $ ，使用学习率为 $\alpha=0.01$ 的 $Adam$ 优化器，模型共有可训练的参数 2241 个，其中 2176 个参数是用于卷积层（每个卷积核有 $h\cdot f$ 个参数和一个偏置 $bias$，共有 $k$ 个卷积核）， 65 个参数用于全连接层（64个参数加 1 个偏置 $bias$）。</p>
+<p>如前所述，其它参数配置可能以 $F1$ 分数下降为代价，换取更低的资源需求。例如，使用 $k=32$ 将减少一半的卷积次数，而 $n=10,20,50$ 也将需要更少的卷积和更小的内存占用。然而，设置 $n=100$ 不仅最大化 $F1$ 得分，而且还使一个公平的比较先进的方法，如 $DeepDefense$ 【4】，该作者使用了 $n=100$ 来训练他们的网络（在【4】中超参数用 $T$ 来表示）。此外，所选的参数配置支持对资源受限的场景进行最坏的情况分析，如 <strong>Sec. 7</strong> 所示。</p>
+<p><img src="/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/table5.PNG" alt></p>
+<h2 id="5-RESULTS"><a href="#5-RESULTS" class="headerlink" title="5. RESULTS"></a>5. RESULTS</h2><p>在本节中，我们将使用 <strong>Sec. 4-A</strong> 中提供的数据集对所提出的方法进行详细评估。准确性(ACC)、假阳性率(FPR)、精度(PPV)、召回率(TPR)和F1评分(F1)的评估指标被用于性能测量并与最先进的模型进行比较。</p>
+<h3 id="A-Detection-Accuracy"><a href="#A-Detection-Accuracy" class="headerlink" title="A. Detection Accuracy"></a>A. Detection Accuracy</h3><p>为了验证我们的方法和在验证集上获得的结果，我们在未见的通信流上测量LUCID的检测性能。表6总结了由 <strong>Sec. 4-B</strong> 中描述的过程产生的各种数据集上获得的结果。如下表所示，在测试数据集范围内保持了非常高的性能，这表明LUCID设计的健壮性。这些结果将在 <strong>Sec. 5-B</strong> 中进一步讨论，我们将我们的解决方案与科学文献中的最先进的工作进行比较。</p>
+<p><img src="/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/table6.PNG" alt></p>
+<p>结果表明，多亏了CNN的特性，LUCID学会了区分恶意DDoS行为和良性流的模式。考虑到卷积方法的特性，无论这些模式在流中的位置如何，它们都能被识别出来，这表明我们对流的空间表示是稳健的。不管DDoS事件是出现在输入的开始还是结束，LUCID都会在输出中产生相同的表示。虽然动态时间在 $DDoS$ 攻击中表明可能DL架构似乎更合适（如长短期记忆（LSTM）），但我们新的结合了CNN的预处理方法删除了模型需要每个完整通信流的上下文信息。相比之下，LSTM是非常难训练的，而且它们在处理长序列时的速度天生就比CNN慢。</p>
+<h3 id="B-State-Of-The-Art-Comparison"><a href="#B-State-Of-The-Art-Comparison" class="headerlink" title="B. State-Of-The-Art Comparison"></a>B. State-Of-The-Art Comparison</h3><p>为了公平地比较LUCID和最新技术，我们将重点分析在UNB数据集上DDoS攻击检测的解决方案。</p>
+<p>我们将特别关注 $DeepDefense$ 【4】，因为它与我们的方法类似，模型是用包属性训练的，而不是其他工作中使用的流级统计数据。$DeepDefense$ 将ISCX2012的 PCAP 文件转换为数据，其中包含滑动窗口内收集的数据包属性。样本标签根据原始数据集提供的标签来确定，每个样本的标签是通过在时间窗口内最后一个数据包的标签确定的。【4】中提出的数据预处理技术与LUCID相似。然而，在LUCID中，一个样本对应到单个通信流，而在 $DeepDefense$ 中一个样本表示在一个时间窗口内收集到的流量。</p>
+<p>在 $DeepDefense$ 论文中提出的四个DL模型中，名为 $3LSTM$ 的模型在 $DDoS$ 流量分类中得分最高。因此，为了便于比较，我们实现了 $3LSTM$ 。该模型的结构包括6个LSTM层，每层64个神经元；2个完全连接层，每层128个神经元，4个批处理归一化（BN）层。为了直接比较DL模型，我们在UNB201X训练集上训练了 $3LSTM$ ，训练集的 $n = 100$ 和 $t = 100$ 与LUCID一样。我们在每个测试集上比较了 $3LSTM$ 与LUCID的实现，并在表7中给出了F1得分结果。</p>
+<p><img src="/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/table7.PNG" alt></p>
+<p>表7所示的结果表明，LUCID和 $3LSTM$ 在测试数据集范围内的F1得分具有可比性。但在计算时间上，LUCID在检测时间上优于 $3LSTM$ 。具体来说，在 Intel Xeon 服务器上对这些模型进行测量，LUCID平均可以分类超过 55000 个样本/秒，而 $3LSTM$ 平均只能达到 1300 个样本/秒（即慢了 40 多倍）。事实上，LUCID有限的隐藏单元和可训练参数使其计算复杂度比 $3LSTM$ 低了很多。</p>
+<p>如前所述，文献中有许多解决方案提供了ISCX2012和CIC2017数据集的性能结果。值得注意的是，这些工作并没有说明所呈现的结果是基于验证数据集还是测试数据集。对于LUCID，我们重申，本节中给出的结果是基于一组完全看不见的数据的测试。</p>
+<p><img src="/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/table8.PNG" alt></p>
+<p>在表8中，我们比较了LUCID与在ISCX2012上验证的最先进技术的性能。表8还包括 $DeepDefense$ 论文【4】中报告的 $3LSTM$ 的性能。对于我们的 $3LSTM$ 版本，得分稍微低一些，我们认为这是由于在两个实现中使用了不同的 PCAP 文件预处理机制。这表明了使用LUCID预处理机制时的性能优势。</p>
+<p>$TR-IDS$ 【36】是采用文本CNN【9】从网络流量的有效载荷中提取特征的入侵检测系统（IDS）。这些特征，与25个包特征和流级属性的组合，最后通过随机森林算法用于流量分类。在ISCX2012中除 $DDoS$ 攻击外的其它攻击配置文件上，$TR-IDS$ 的 $Accuracy$ 和 $TPR$ 均在0.99以上，但 $DDoS$ 检测性能结果明显低于LUCID。</p>
+<p>$E3ML$ 【47】使用20个基于熵的流量特征和3个ML分类器（RNN、多层感知器和交替决策树）将流量分类为正常流量或 $DDoS$ 流量。尽管结构复杂，但在ISCX2012上测量的 $TPR$ 显示，$E3ML$ 倾向于假阴性。</p>
+<p>对于CIC2017数据集，我们在表9中展示了与最先进的解决方案的性能比较。</p>
+<p><img src="/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/table9.PNG" alt></p>
+<p>$DeepGFL$ 【35】是一个框架，旨在从低阶特征形成的分层图中提取高阶流量特征。为了验证提出的框架，作者使用特征的图表示来训练两个流量分类器，即决策树和随机森林，并在CIC2017上进行测试。尽管几种攻击类型的精度得分相当不错（除了 $DDoS$ 以外的任何类型的流量配置文件的精度得分在 0.88 到 1 之间），但本文给出的结果表明，所提出的方法容易出现假阴性，导致 $F1$ 得分非常低。</p>
+<p>【38】的作者提出了四种不同的DL模型用于物联网（IoT）网络中的 $DDoS$ 攻击检测。采用LSTM、CNN和全连接层相结合的方法建立模型。所有模型的输入层由 82 个单元组成，每个单元对应CIC2017中可用的每个流级特性，而输出层返回给定流成为DDoS攻击一部分的概率。模型 $1D-CNN$ 和 $LSTM$ 产生了很好的分类分数，而其他的似乎有很高的假阴性率。</p>
+<p>据我们所知，在科学文献中还没有在CSECIC2018数据集上验证的 $DDoS$ 攻击检测解决方案。</p>
+<h3 id="C-Discussion"><a href="#C-Discussion" class="headerlink" title="C. Discussion"></a>C. Discussion</h3><p>根据前面几节给出的结果和分析，我们可以得出结论，使用网络流量的包级特征比使用流级特征或熵特征等统计信息更有效，并得到更高的分类 $Accuracy$。这不仅可以通过LUCID的评估结果和我们对 $DeepDefense$ 的实现（都是基于包级特征）得到证明，而且 $TR-IDS$ 将流级特征与包特征（包括部分负载）相结合，也具有较高的分类 $Accuracy$ 。</p>
+<p>相比之下，$E3ML$ 、$DeepGFL$ 和【38】中提出的大多数解决方案都依赖于流级特征，似乎更容易出现假阴性，从而将 $DDoS$ 攻击归类为正常活动。唯一的例外是【38】的模型 $1D-CNN$ 和 $LSTM$ ，它将CNN和RNN层结合，产生了较高的TPR。</p>
+<p>此外，我们还强调了LUCID并没有针对单个数据集进行调优，而是针对组合数据集的验证部分进行调优，并且在完全看不见的测试数据上仍然优于最新的性能。</p>
+<h2 id="6-ANALYSIS"><a href="#6-ANALYSIS" class="headerlink" title="6. ANALYSIS"></a>6. ANALYSIS</h2><p>现在，我们通过证明模型正在学习正确的领域信息来解释LUCID的内部操作。我们通过分析数据集中使用的特征及其在模型中的激活来实现这一点。据我们所知，这是第一次将特定激活分析应用于基于CNN的 $DDoS$ 检测方法。</p>
+<h3 id="A-Kernel-Activations"><a href="#A-Kernel-Activations" class="headerlink" title="A. Kernel Activations"></a>A. Kernel Activations</h3><p>这种方法的灵感来自于一个类似的研究【65】，该研究在自然语言处理的另一个领域解释CNN。然而，核激活分析技术是可以移植到我们的工作中。由于每个内核与输入矩阵的宽度相同，因此可以删除分类器，推动 $DDoS$ 流通过卷积层，并捕获每个内核的激活结果。对于每个流，我们计算每个特性的总激活数，这在空间输入表示中意味着每列，结果是11个值映射到11个特性。然后在所有 $DDoS$ 流的所有内核中重复此操作，最终输出是每个特性按列激活的总和。直觉是，当一个正样本，即 $DDoS$ 流被看到时，一个特征的激活程度越高，CNN对该特征的重视程度就越高。相反，激活越低，特征的重要性就越低，而且由于我们的模型使用传统的校正线性激活函数， $ReLU(x) = max{0, x}$ ，这意味着任何负激活都为零，因此对 $Sigmoid$ 分类器检测 $DDoS$ 攻击没有影响。</p>
+<p>对所有核的这些激活进行求和是可能的，因为它们的大小相同，并且在相同的空间表示上操作。我们分析来自于 <strong>Sec. 5-A</strong> 中使用的UNB201X测试集的 $DDoS$ 流。</p>
+<p>表10给出了基于 $ReLU$ 后平均列特征激活和的11个特征的排名，并突出了两个在CNN所有内核中激活最多的特征。</p>
+<p><img src="/2021/10/27/LUCID%E7%BF%BB%E8%AF%91/table10.PNG" alt></p>
+<p><strong>Highest Layer</strong>。我们断言，CNN可能是从每一个 $DDoS$ 流运作的最高层学习的。回想一下，最高层链接到 $DDoS$ 攻击的类型，例如网络、传输或应用层攻击。我们建议，这些信息可以用来扩展LUCID，以预测发生的 $DDoS$ 攻击的特定类型，从而有助于选择合适的保护机制。我们将通过扩展数据集标记来实现预测，这是我们考虑的未来工作。</p>
+<p><strong>IP Flags</strong>。在我们的设计中，这个属性是一个16位的整数值，包括三位标志保留位，是否 $Fragments$ ，加上13位 $Fragment\,offset$ 值（只有当 $Fragment$ 被置1时该值非零）。与 IP 分片 $Flood\,DDoS$ 攻击不同，UNB数据集中 99.99% 的 $DDoS$ 报文的 IP 标志值为 0x4000，只有”$Don’t \, Fragment$”位置1。在UNB良性流量中观察到不同的IP标志分布，92% 的包中“不分片”位设置为1。因此，攻击流量和良性流量的 IP 标志模式略有不同，我们相信LUCID确实在学习它们在 $DDoS$ 分类中的重要性，这可以从它在我们排名中的第2位得到证明。</p>
+<h3 id="B-Future-Directions"><a href="#B-Future-Directions" class="headerlink" title="B. Future Directions"></a>B. Future Directions</h3><p>然而，即使有了这种激活分析，也没有为检测 $DDoS$ 攻击确定最佳的特征列表，我们可以直接比较我们的结果。通过对相关工作的分析，我们发现了大量的无状态和有状态特征，并强调了它们对给定检测模型的影响，这并不出人意料，因为使用特征会根据攻击流量的不同而变化。2014年的研究【66】强调了这一点，该研究得出的结论是，不同类别的攻击具有不同的属性，导致用于攻击检测的显著特征会存在很大差异。作者还注意到，学习特定于攻击场景的模式比努力生成攻击不可知的有限特征列表更有价值。因此，我们从分析中得出结论，LUCID似乎认识到了 $DDoS$ 检测相关特性的重要性，这让我们对预测性能有了信心。</p>
+<p>与此激活分析相关联，我们强调对抗鲁棒性是部署基于ML的IDS的关键考虑因素。如【67】所述，对IDS的两种主要攻击一种是在训练期间通过投毒攻击（即破坏训练数据），另一种在测试中，试图通过对观察到的特征进行小扰动来引起错误分类的逃避攻击。我们的激活分析是研究对抗攻击的第一步，表10中的特征排名突出了规避攻击干扰的特征。例如，攻击者需要完全了解CNN和内核的激活情况，并且有能力在网络中伪造流量。构建抵御对抗攻击的坚固防御是一个有待解决的问题【68】，也是我们将为LUCID进一步探索的一个方面。</p>
+<h2 id="7-USE-CASE-DDoS-DETECTION-AT-THE-EDGE"><a href="#7-USE-CASE-DDoS-DETECTION-AT-THE-EDGE" class="headerlink" title="7. USE-CASE: DDoS DETECTION AT THE EDGE"></a>7. USE-CASE: DDoS DETECTION AT THE EDGE</h2><h3 id="A-Detection"><a href="#A-Detection" class="headerlink" title="A. Detection"></a>A. Detection</h3><h3 id="B-Training-Time"><a href="#B-Training-Time" class="headerlink" title="B. Training Time"></a>B. Training Time</h3><h2 id="8-CONCLUSIONS"><a href="#8-CONCLUSIONS" class="headerlink" title="8. CONCLUSIONS"></a>8. CONCLUSIONS</h2><p>$DDoS$ 攻击的挑战继续破坏着全球网络的可用性。在这项工作中，我们提出了一个基于CNN的 $DDoS$ 检测架构。我们的设计目标是一个实用的、轻量级的实现，具有较低的处理开销和攻击检测时间。CNN模型的好处是消除了统计检测方法所需的阈值配置，并减少了替代ML技术所需的特征工程和对专家的依赖。这使得实际的部署成为可能。</p>
+<p>与现有的解决方案相比，我们特殊的流量预处理机制确认了流量如何通过网络设备流动，旨在将网络流量呈现给CNN模型，用于在线 $DDoS$ 攻击检测。我们的评估结果表明，LUCID符合现有的最先进的性能。然而，与现有工作不同的是，我们在一系列数据集上展示了一致的检测结果，证明了我们的解决方案的稳定性。此外，我们对资源受限设备的评估证明了我们的模型在资源受限环境中部署的适用性。具体来说，我们证明了处理时间比类似的最先进的解决方案提高了40倍。最后，我们还提出了一个激活分析，以解释LUCID如何学习检测 $DDoS$ 流量，这是现有工作中缺乏的。</p>
 
     </div>
 
@@ -283,14 +398,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/10/27/MarkDown%E8%AF%AD%E6%B3%95/" rel="prev" title="MarkDown语法">
-                  <i class="fa fa-chevron-left"></i> MarkDown语法
+                <a href="/2021/10/27/Makefile/" rel="prev" title="Makefile">
+                  <i class="fa fa-chevron-left"></i> Makefile
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/10/27/Makefile/" rel="next" title="Makefile">
-                  Makefile <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -336,6 +448,12 @@
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
 
 
 
